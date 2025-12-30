@@ -21,7 +21,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
   const {
     dailyVolume = "2,500,000+",
     dailyVolumeLabel = "PATIENT APPOINTMENTS MANAGED",
-    headline = "The Complete Platform for Modern Healthcare Practices",
+    headline = "All-in-One Smart Clinic Solution",
     subheadline = "CareTracker streamlines every aspect of clinic operations — from patient scheduling and billing to EHR integration and staff management — all in one HIPAA-compliant platform.",
     description = "Trusted by 5,000+ healthcare providers, CareTracker powers efficient clinic operations with enterprise-grade security, seamless EHR/EMR integration, and intuitive workflows.",
     videoSrc = "",
