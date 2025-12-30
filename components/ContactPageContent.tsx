@@ -113,8 +113,37 @@ export function ContactPageContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitted(true)
+    try {
+    const response = await fetch("https://formspree.io/f/mregvrnr", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        message: formData.message,
+      }),
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+
+      // reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    alert("Network error. Please try again later.");
+  }
   }
 
   return (
