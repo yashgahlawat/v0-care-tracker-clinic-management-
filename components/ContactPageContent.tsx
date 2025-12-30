@@ -121,28 +121,31 @@ export function ContactPageContent() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        name: `${formData.firstName} ${formData.lastName}`,
         email: formData.email,
         message: formData.message,
       }),
-    });
+    })
 
     if (response.ok) {
-      alert("Message sent successfully!");
+      setIsSubmitted(true)
 
       // reset form
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
+        phone: "",
+        clinicName: "",
+        clinicSize: "",
+        inquiryType: "",
         message: "",
-      });
+      })
     } else {
-      alert("Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again.")
     }
   } catch (error) {
-    alert("Network error. Please try again later.");
+    alert("Network error. Please try again later.")
   }
   }
 
