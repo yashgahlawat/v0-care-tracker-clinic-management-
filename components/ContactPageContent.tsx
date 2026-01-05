@@ -114,39 +114,39 @@ export function ContactPageContent() {
     e.preventDefault()
     // Simulate form submission
     try {
-    const response = await fetch("https://formspree.io/f/mregvrnr", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: `${formData.firstName} ${formData.lastName}`,
-        email: formData.email,
-        message: formData.message,
-      }),
-    })
-
-    if (response.ok) {
-      setIsSubmitted(true)
-
-      // reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        clinicName: "",
-        clinicSize: "",
-        inquiryType: "",
-        message: "",
+      const response = await fetch("https://formspree.io/f/mregvrnr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          message: formData.message,
+        }),
       })
-    } else {
-      alert("Something went wrong. Please try again.")
+
+      if (response.ok) {
+        setIsSubmitted(true)
+
+        // reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          clinicName: "",
+          clinicSize: "",
+          inquiryType: "",
+          message: "",
+        })
+      } else {
+        alert("Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      alert("Network error. Please try again later.")
     }
-  } catch (error) {
-    alert("Network error. Please try again later.")
-  }
   }
 
   return (
@@ -155,19 +155,13 @@ export function ContactPageContent() {
       <section className="pt-12 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1d326d]/5 to-background">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span
-              className="inline-block px-4 py-2 bg-[#1d326d]/10 text-[#1d326d] rounded-full text-sm font-semibold mb-6"
-              style={{ fontFamily: "Inter" }}
-            >
+            <span className="inline-block px-4 py-2 bg-[#1d326d]/10 text-[#1d326d] rounded-full text-sm font-semibold mb-6">
               Contact Us
             </span>
-            <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6"
-              style={{ fontFamily: "Inter" }}
-            >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Get in Touch with <span className="text-[#1d326d]">CareTracker</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "Inter" }}>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               Have questions about our clinic management software? Our team is here to help you find the perfect
               solution.
             </p>
@@ -191,15 +185,9 @@ export function ContactPageContent() {
                 <div className="w-14 h-14 bg-[#1d326d]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <method.icon className="w-7 h-7 text-[#1d326d]" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2" style={{ fontFamily: "Inter" }}>
-                  {method.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-3" style={{ fontFamily: "Inter" }}>
-                  {method.description}
-                </p>
-                <p className="text-[#1d326d] font-semibold" style={{ fontFamily: "Inter" }}>
-                  {method.contact}
-                </p>
+                <h3 className="text-lg font-bold text-foreground mb-2">{method.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{method.description}</p>
+                <p className="text-[#1d326d] font-semibold">{method.contact}</p>
               </motion.div>
             ))}
           </div>
@@ -217,19 +205,13 @@ export function ContactPageContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl font-bold text-foreground mb-6" style={{ fontFamily: "Inter" }}>
-                Send Us a Message
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h2>
 
               {isSubmitted ? (
                 <div className="bg-[#fcc41d]/10 rounded-2xl p-8 text-center">
                   <CheckCircle2 className="w-16 h-16 text-[#fcc41d] mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "Inter" }}>
-                    Message Sent!
-                  </h3>
-                  <p className="text-muted-foreground" style={{ fontFamily: "Inter" }}>
-                    We'll get back to you within 24 hours.
-                  </p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Message Sent!</h3>
+                  <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -300,9 +282,7 @@ export function ContactPageContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl font-bold text-foreground mb-6" style={{ fontFamily: "Inter" }}>
-                Our Locations
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Our Locations</h2>
               <div className="bg-gray-100 rounded-2xl h-64 lg:h-80 flex items-center justify-center mb-8">
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
@@ -318,7 +298,7 @@ export function ContactPageContent() {
                         <Building2 className="w-5 h-5 text-[#1d326d]" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-foreground" style={{ fontFamily: "Inter" }}>
+                        <h3 className="font-bold text-foreground">
                           {office.city} {office.isHQ && <span className="text-[#1d326d]">(HQ)</span>}
                         </h3>
                         <p className="text-sm text-muted-foreground">{office.address}</p>
@@ -337,12 +317,8 @@ export function ContactPageContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4" style={{ fontFamily: "Inter" }}>
-              Department Contacts
-            </h2>
-            <p className="text-muted-foreground" style={{ fontFamily: "Inter" }}>
-              Reach the right team directly
-            </p>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Department Contacts</h2>
+            <p className="text-muted-foreground">Reach the right team directly</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -358,12 +334,8 @@ export function ContactPageContent() {
                 <div className="w-12 h-12 bg-[#1d326d]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-6 h-6 text-[#1d326d]" />
                 </div>
-                <h3 className="font-bold text-foreground mb-1" style={{ fontFamily: "Inter" }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-2" style={{ fontFamily: "Inter" }}>
-                  {item.description}
-                </p>
+                <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
                 <a href={`mailto:${item.email}`} className="text-sm text-[#1d326d] font-medium">
                   {item.email}
                 </a>
