@@ -7,13 +7,11 @@ export function TrustBanner() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-700 text-lg font-medium text-center md:text-left">
-            Trusted by leading medical practices in Sydney, Melbourne, and
-            Brisbane
+            Trusted by leading medical practices in Perth, Sydney, and Brisbane
           </p>
           <Link
             href="/book-demo"
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors group"
-          >
+            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors group">
             Book Demo
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>

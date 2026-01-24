@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 import CareTrackerLogo from "./brand/CareTrackerLogo";
 
@@ -38,7 +38,6 @@ const defaultSections: FooterSection[] = [
       { label: "Features", href: "/features" },
       { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Clinic API", href: "/features" },
     ],
   },
   {
@@ -46,8 +45,8 @@ const defaultSections: FooterSection[] = [
     links: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Help Center", href: "/faq" },
-      { label: "System Status", href: "/faq" },
+      // { label: "Help Center", href: "/faq" },
+      { label: "System Status", href: "/system-status" },
     ],
   },
 ];
@@ -58,7 +57,7 @@ export const Footer = ({
   sections = defaultSections,
   socialLinks = {
     github: "https://github.com",
-    email: "hello@caretracker.com",
+    email: "deepak@caretracker.com",
   },
 }: FooterProps) => {
   const renderLink = (link: FooterLink) => {
@@ -104,14 +103,14 @@ export const Footer = ({
             </div>
 
             <div className="flex items-center gap-3 mt-6">
-              {socialLinks.github && (
+              {/* {socialLinks.github && (
                 <a
                   href={socialLinks.github}
                   className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-150"
                   aria-label="GitHub">
                   <Github className="w-4 h-4" />
                 </a>
-              )}
+              )} */}
               {socialLinks.email && (
                 <a
                   href={`mailto:${socialLinks.email}`}

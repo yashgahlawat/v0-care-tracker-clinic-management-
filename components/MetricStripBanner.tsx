@@ -1,8 +1,8 @@
 export function MetricStripBanner() {
   const metrics = [
-    { label: "10k+ Doctors", value: "10k+" },
-    { label: "2M+ Patients", value: "2M+" },
-    { label: "99.9% Uptime", value: "99.9%" },
+    { label: "7 Clinics", value: "7" },
+    { label: "10k+ Patients", value: "10k+" },
+    { label: "99.95% Uptime", value: "99.95%" },
     { label: "24/7 Support", value: "24/7" },
   ];
 
@@ -13,8 +13,7 @@ export function MetricStripBanner() {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="text-center group cursor-default transition-transform duration-300 hover:scale-110"
-            >
+              className="text-center group cursor-default transition-transform duration-300 hover:scale-110">
               <div className="text-white text-2xl md:text-3xl font-bold mb-1 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
                 {metric.value}
               </div>

@@ -5,17 +5,28 @@ import type React from "react";
 import { motion } from "framer-motion";
 import {
   BadgeCheck,
+  Briefcase,
   Calendar,
   CreditCard,
   FileText,
+  Mail,
   MessageCircle,
   MessageSquare,
+  Network,
   Phone,
+  Users,
   Video,
+  Workflow,
 } from "lucide-react";
 import { useState } from "react";
 
-type IntegrationCategory = "All" | "Communication" | "Payments" | "Scheduling";
+type IntegrationCategory =
+  | "All"
+  | "Communication"
+  | "Payments"
+  | "Scheduling"
+  | "HR & Admin"
+  | "Automation";
 
 type Integration = {
   id: string;
@@ -36,6 +47,56 @@ const integrations: Integration[] = [
     category: ["Communication"],
     icon: <MessageSquare className="w-8 h-8" />,
     popular: true,
+  },
+  {
+    id: "sap",
+    name: "SAP SuccessFactors",
+    description:
+      "Enterprise HR and employee experience management for large healthcare organizations.",
+    category: ["HR & Admin"],
+    icon: <Briefcase className="w-8 h-8" />,
+    popular: true,
+  },
+  {
+    id: "mulesoft",
+    name: "MuleSoft",
+    description:
+      "Unified platform for integration, APIs, and automation across your clinic stack.",
+    category: ["Automation"],
+    icon: <Network className="w-8 h-8" />,
+    popular: true,
+  },
+  {
+    id: "sendgrid",
+    name: "SendGrid",
+    description:
+      "Reliable transactional and marketing email delivery at scale.",
+    category: ["Communication"],
+    icon: <Mail className="w-8 h-8" />,
+  },
+  {
+    id: "n8n",
+    name: "n8n",
+    description:
+      "Workflow automation for technical teams to connect CareTracker with any app.",
+    category: ["Automation"],
+    icon: <Workflow className="w-8 h-8" />,
+  },
+  {
+    id: "ats",
+    name: "ATS Integration",
+    description:
+      "Sync candidate data with major Applicant Tracking Systems for streamlined hiring.",
+    category: ["HR & Admin"],
+    icon: <Users className="w-8 h-8" />,
+  },
+  {
+    id: "xero",
+    name: "Xero",
+    description:
+      "Seamless accounting software integration for invoicing and financial reporting.",
+    category: ["Payments"],
+    icon: <FileText className="w-8 h-8" />,
   },
   {
     id: "google-calendar",
@@ -92,6 +153,8 @@ const categories: IntegrationCategory[] = [
   "Communication",
   "Payments",
   "Scheduling",
+  "HR & Admin",
+  "Automation",
 ];
 
 export function IntegrationsContent() {
@@ -179,7 +242,7 @@ export function IntegrationsContent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative bg-white rounded-xl p-6 shadow-[0_1px_1px_0_rgba(255,255,255,0),0_0_0_1px_rgba(87,90,100,0.12)] hover:shadow-[0_1px_2px_0_rgba(0,0,0,0.05),0_0_0_1px_rgba(87,90,100,0.18)] transition-all duration-200">
+                className="group relative bg-white rounded-xl p-6 lg:rounded-2xl p-5 lg:p-6 shadow-sm border border-primary/20 hover:shadow-md hover:border-primary transition-all duration-200">
                 {/* Popular Badge */}
                 {integration.popular && (
                   <div className="absolute top-4 right-4">

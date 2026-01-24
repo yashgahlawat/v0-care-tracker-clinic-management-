@@ -166,3 +166,202 @@ export const IntegrationBentoGrid = () => {
     </div>
   );
 };
+
+// "use client";
+// import { Button } from "@/components/ui/button";
+// import Link from "next/link";
+
+// const SAPLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-blue-600"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="1.5"
+//     strokeLinecap="round"
+//     strokeLinejoin="round">
+//     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+//     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+//   </svg>
+// );
+
+// const MuleSoftLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-blue-400"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="1.5"
+//     strokeLinecap="round"
+//     strokeLinejoin="round">
+//     <circle cx="12" cy="12" r="10" />
+//     <path d="M2 12h20" />
+//     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10" />
+//     <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10" />
+//   </svg>
+// );
+
+// const SendGridLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-blue-500"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="1.5"
+//     strokeLinecap="round"
+//     strokeLinejoin="round">
+//     <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8" />
+//     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+//     <path d="M19 16v6" />
+//     <path d="M16 19h6" />
+//   </svg>
+// );
+
+// const N8NLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-orange-500"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="1.5"
+//     strokeLinecap="round"
+//     strokeLinejoin="round">
+//     <rect width="8" height="8" x="3" y="3" rx="2" />
+//     <path d="M7 11v4a2 2 0 0 0 2 2h4" />
+//     <rect width="8" height="8" x="13" y="13" rx="2" />
+//   </svg>
+// );
+
+// const ATSLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-purple-500"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="1.5"
+//     strokeLinecap="round"
+//     strokeLinejoin="round">
+//     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+//     <circle cx="9" cy="7" r="4" />
+//     <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+//     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+//   </svg>
+// );
+
+// const XeroLogo = () => (
+//   <svg
+//     className="w-16 h-16 text-[#0b3e51]"
+//     viewBox="0 0 24 24"
+//     fill="currentColor">
+//     <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18zM4 9.47l7 3.5v7.06l-7-3.5V9.47zm16 0v7.06l-7 3.5v-7.06l7-3.5z" />
+//   </svg>
+// );
+
+// const logos = [
+//   { name: "SAP SuccessFactors", Component: SAPLogo },
+//   { name: "MuleSoft", Component: MuleSoftLogo },
+//   { name: "Xero", Component: XeroLogo },
+//   { name: "SendGrid", Component: SendGridLogo },
+//   { name: "n8n", Component: N8NLogo },
+//   { name: "ATS Integration", Component: ATSLogo },
+// ];
+
+// export const IntegrationBentoGrid = () => {
+//   return (
+//     <div className="w-full py-16 bg-white" id="integrations">
+//       <div className="max-w-7xl mx-auto px-6">
+//         {/* Headline */}
+//         <div className="text-center mb-12">
+//           <p
+//             className="text-lg text-primary font-medium"
+//             style={{
+//               fontFamily: "var(--font-figtree), Figtree",
+//             }}>
+//             Seamlessly integrated with 50+ tools you love
+//           </p>
+//         </div>
+
+//         {/* Logo Marquee Container */}
+//         <div className="relative overflow-hidden group">
+//           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+//           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+//           <div className="flex gap-16 py-8 [&>*]:animate-marquee group-hover:[&>*]:pause">
+//             {/* First Set */}
+//             <div className="flex gap-16 shrink-0 animate-marquee group-hover:pause">
+//               {logos.map((logo, index) => {
+//                 const LogoComponent = logo.Component;
+//                 return (
+//                   <div
+//                     key={`set1-${index}`}
+//                     className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
+//                     <LogoComponent />
+//                     <span
+//                       className="text-xs mt-2 font-medium"
+//                       style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+//                       {logo.name}
+//                     </span>
+//                   </div>
+//                 );
+//               })}
+//             </div>
+
+//             {/* Second Set (Duplicate for seamless loop) */}
+//             <div
+//               className="flex gap-16 shrink-0 animate-marquee group-hover:pause"
+//               aria-hidden="true">
+//               {logos.map((logo, index) => {
+//                 const LogoComponent = logo.Component;
+//                 return (
+//                   <div
+//                     key={`set2-${index}`}
+//                     className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
+//                     <LogoComponent />
+//                     <span
+//                       className="text-xs mt-2 font-medium"
+//                       style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+//                       {logo.name}
+//                     </span>
+//                   </div>
+//                 );
+//               })}
+//             </div>
+
+//             {/* Third Set (Another duplicate for extra smoothness) */}
+//             <div
+//               className="flex gap-16 shrink-0 animate-marquee group-hover:pause"
+//               aria-hidden="true">
+//               {logos.map((logo, index) => {
+//                 const LogoComponent = logo.Component;
+//                 return (
+//                   <div
+//                     key={`set3-${index}`}
+//                     className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
+//                     <LogoComponent />
+//                     <span
+//                       className="text-xs mt-2 font-medium"
+//                       style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+//                       {logo.name}
+//                     </span>
+//                   </div>
+//                 );
+//               })}
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Button */}
+//         <div className="text-center mt-12">
+//           <Link href="/integrations">
+//             <Button
+//               variant="outline"
+//               size="lg"
+//               className="text-base font-medium bg-transparent text-primary border-primary hover:bg-primary hover:text-white">
+//               View all integrations
+//             </Button>
+//           </Link>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };

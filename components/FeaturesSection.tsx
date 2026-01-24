@@ -68,7 +68,7 @@ const features: Feature[] = [
     icon: <Plug className="w-6 h-6" />,
     title: "Integrations Ecosystem",
     description:
-      "Connect with practice management systems, pathology labs, medical imaging, telehealth platforms, and accounting software.",
+      "Seamless connections with SAP SuccessFactors, MuleSoft, Xero, SendGrid, n8n, and major ATS platforms.",
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,

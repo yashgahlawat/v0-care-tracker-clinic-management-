@@ -58,7 +58,7 @@ const features: PricingFeature[] = [
 
   // Category B: Growth & Automation
   {
-    name: "WhatsApp Auto-Reminders",
+    name: "Automated Patient Reminders (SMS/Email/App)",
     basic: false,
     professional: true,
     enterprise: true,
@@ -128,8 +128,8 @@ const plans: PricingPlan[] = [
   {
     name: "Professional",
     level: "professional",
-    price: "$49",
-    period: "/month",
+    price: "Custom",
+    period: "",
     description: "Advanced features for growing practices",
     popular: true,
   },

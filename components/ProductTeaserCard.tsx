@@ -29,11 +29,11 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
     dailyVolumeLabel = "PATIENT APPOINTMENTS MANAGED",
     headline = "All-in-One Smart Clinic Solution",
     subheadline = "CareTracker streamlines every aspect of clinic operations — from patient scheduling and billing to EHR integration and staff management — all in one HIPAA-compliant platform.",
-    description = "Trusted by 5,000+ healthcare providers, CareTracker powers efficient clinic operations with enterprise-grade security, seamless EHR/EMR integration, and intuitive workflows.",
+    description = "Trusted by 500+ healthcare providers, CareTracker powers efficient clinic operations with enterprise-grade security, seamless EHR/EMR integration, and intuitive workflows.",
     videoSrc = "",
     posterSrc = "/images/design-mode/9ad78a5534a46e77bafe116ce1c38172c60dc21a-1069x1068.png",
     primaryButtonText = "Start Free Trial",
-    primaryButtonHref = "",
+    primaryButtonHref = "/contact",
     secondaryButtonText = "Watch Demo",
     secondaryButtonHref = "",
   } = props;
@@ -133,14 +133,14 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   {primaryButtonText}
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href={secondaryButtonHref}
                   onClick={e => e.preventDefault()}
                   className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl">
                   {secondaryButtonText}
                 </a>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
 
@@ -219,7 +219,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg">
                   <ClipboardList className="w-4 h-4 sm:w-6 sm:h-6 text-primary mx-auto mb-1 sm:mb-2" />
                   <p className="text-lg sm:text-2xl font-bold text-[#202020]">
-                    156
+                    356
                   </p>
                   <p className="text-[10px] sm:text-xs text-[#666]">
                     This Week

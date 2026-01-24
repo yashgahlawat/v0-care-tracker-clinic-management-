@@ -21,7 +21,7 @@ type DataPoint = {
 
 const stats: StatItem[] = [
   {
-    value: "5,000+",
+    value: "500+",
     description: "Healthcare providers\ntrusting CareTracker",
     delay: 0,
   },
@@ -140,8 +140,8 @@ export const BankingScaleHero = () => {
               style={{
                 fontFamily: "var(--font-roboto), Roboto",
               }}>
-              The only clinic OS that automatically fills empty slots via
-              WhatsApp, reduces admin time by 40%, and ensures you get paid
+              The only clinic OS that automatically fills empty slots via smart
+              messaging, reduces admin time by 40%, and ensures you get paid
               faster.
             </p>
 
