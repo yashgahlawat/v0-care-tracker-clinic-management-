@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { User, FileText, Calendar, Pill, CreditCard } from "lucide-react"
+import { motion } from "framer-motion";
+import { Calendar, CreditCard, FileText, Pill, User } from "lucide-react";
 
 const activities = [
   {
@@ -49,7 +49,7 @@ const activities = [
     icon: Pill,
     color: "bg-violet-100 text-violet-600",
   },
-]
+];
 
 export const StaffActivityFeed = () => {
   return (
@@ -61,19 +61,28 @@ export const StaffActivityFeed = () => {
     >
       <div className="p-5 border-b border-gray-100 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-[#1d326d]">Staff Activity</h2>
-        <button className="text-[#1d326d] text-sm font-medium hover:underline">View All</button>
+        <button className="text-[#1d326d] text-sm font-medium hover:underline">
+          View All
+        </button>
       </div>
 
       <div className="p-4 space-y-4 max-h-80 overflow-y-auto">
-        {activities.map((activity) => (
+        {activities.map(activity => (
           <div key={activity.id} className="flex gap-3">
-            <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${activity.color}`}>
+            <div
+              className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${activity.color}`}
+            >
               <activity.icon size={16} />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm text-gray-700">
-                <span className="font-medium text-gray-900">{activity.user}</span> {activity.action}{" "}
-                <span className="font-medium text-[#1d326d]">{activity.target}</span>
+                <span className="font-medium text-gray-900">
+                  {activity.user}
+                </span>{" "}
+                {activity.action}{" "}
+                <span className="font-medium text-[#1d326d]">
+                  {activity.target}
+                </span>
               </p>
               <p className="text-xs text-gray-400 mt-0.5">{activity.time}</p>
             </div>
@@ -81,5 +90,5 @@ export const StaffActivityFeed = () => {
         ))}
       </div>
     </motion.div>
-  )
-}
+  );
+};

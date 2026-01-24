@@ -1,12 +1,26 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight, CheckCircle2, Calendar, Mail, User, Building, Phone, Loader2 } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Building,
+  Calendar,
+  CheckCircle2,
+  Loader2,
+  Mail,
+  Phone,
+  User,
+} from "lucide-react";
+import { useState } from "react";
 
-const benefits = ["Free 30-day trial", "No credit card required", "Personalized demo", "Free data migration"]
+const benefits = [
+  "Free 30-day trial",
+  "No credit card required",
+  "Personalized demo",
+  "Free data migration",
+];
 
 export const LandingCTA = () => {
   const [formData, setFormData] = useState({
@@ -15,20 +29,20 @@ export const LandingCTA = () => {
     phone: "",
     clinic: "",
     size: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
 
   return (
     <section
@@ -63,9 +77,13 @@ export const LandingCTA = () => {
             >
               Ready to Transform Your Clinic Operations?
             </h2>
-            <p className="text-xl text-white/70 leading-relaxed mb-8" style={{ fontFamily: "Inter" }}>
-              Schedule a personalized demo with our healthcare specialists and see how CareTracker can streamline your
-              practice in just 30 minutes.
+            <p
+              className="text-xl text-white/70 leading-relaxed mb-8"
+              style={{ fontFamily: "Inter" }}
+            >
+              Schedule a personalized demo with our healthcare specialists and
+              see how CareTracker can streamline your practice in just 30
+              minutes.
             </p>
 
             {/* Benefits */}
@@ -80,7 +98,10 @@ export const LandingCTA = () => {
                   className="flex items-center gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#4CAF50] flex-shrink-0" />
-                  <span className="text-white/80 text-sm" style={{ fontFamily: "Figtree" }}>
+                  <span
+                    className="text-white/80 text-sm"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {benefit}
                   </span>
                 </motion.div>
@@ -89,7 +110,10 @@ export const LandingCTA = () => {
 
             {/* Contact Info */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <p className="text-white/60 text-sm mb-3" style={{ fontFamily: "Inter" }}>
+              <p
+                className="text-white/60 text-sm mb-3"
+                style={{ fontFamily: "Inter" }}
+              >
                 Prefer to talk to someone directly?
               </p>
               <div className="space-y-2">
@@ -130,11 +154,18 @@ export const LandingCTA = () => {
                   <div className="w-16 h-16 rounded-full bg-[#22c55e]/10 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-8 h-8 text-[#22c55e]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1d326d] mb-3" style={{ fontFamily: "Figtree" }}>
+                  <h3
+                    className="text-2xl font-bold text-[#1d326d] mb-3"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     Demo Scheduled!
                   </h3>
-                  <p className="text-[#666666] mb-6" style={{ fontFamily: "Inter" }}>
-                    We'll send you a calendar invite shortly. Looking forward to showing you CareTracker!
+                  <p
+                    className="text-[#666666] mb-6"
+                    style={{ fontFamily: "Inter" }}
+                  >
+                    We'll send you a calendar invite shortly. Looking forward to
+                    showing you CareTracker!
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
@@ -146,10 +177,16 @@ export const LandingCTA = () => {
                 </motion.div>
               ) : (
                 <>
-                  <h3 className="text-2xl font-bold text-[#1d326d] mb-2" style={{ fontFamily: "Figtree" }}>
+                  <h3
+                    className="text-2xl font-bold text-[#1d326d] mb-2"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     Book Your Free Demo
                   </h3>
-                  <p className="text-[#666666] mb-6" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-[#666666] mb-6"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     Fill out the form and we'll get back to you within 24 hours.
                   </p>
 
@@ -168,7 +205,9 @@ export const LandingCTA = () => {
                           type="text"
                           required
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onChange={e =>
+                            setFormData({ ...formData, name: e.target.value })
+                          }
                           className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-[#1d326d] focus:ring-2 focus:ring-[#1d326d]/10 outline-none transition-all"
                           placeholder="Dr. Jane Smith"
                           style={{ fontFamily: "Figtree" }}
@@ -190,7 +229,9 @@ export const LandingCTA = () => {
                           type="email"
                           required
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={e =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                           className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-[#1d326d] focus:ring-2 focus:ring-[#1d326d]/10 outline-none transition-all"
                           placeholder="jane@clinic.com"
                           style={{ fontFamily: "Figtree" }}
@@ -212,7 +253,9 @@ export const LandingCTA = () => {
                           type="tel"
                           required
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={e =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
                           className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-[#1d326d] focus:ring-2 focus:ring-[#1d326d]/10 outline-none transition-all"
                           placeholder="(555) 123-4567"
                           style={{ fontFamily: "Figtree" }}
@@ -234,7 +277,9 @@ export const LandingCTA = () => {
                           type="text"
                           required
                           value={formData.clinic}
-                          onChange={(e) => setFormData({ ...formData, clinic: e.target.value })}
+                          onChange={e =>
+                            setFormData({ ...formData, clinic: e.target.value })
+                          }
                           className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-[#1d326d] focus:ring-2 focus:ring-[#1d326d]/10 outline-none transition-all"
                           placeholder="Sunrise Medical Center"
                           style={{ fontFamily: "Figtree" }}
@@ -253,7 +298,9 @@ export const LandingCTA = () => {
                       <select
                         required
                         value={formData.size}
-                        onChange={(e) => setFormData({ ...formData, size: e.target.value })}
+                        onChange={e =>
+                          setFormData({ ...formData, size: e.target.value })
+                        }
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1d326d] focus:ring-2 focus:ring-[#1d326d]/10 outline-none transition-all appearance-none bg-white"
                         style={{ fontFamily: "Figtree" }}
                       >
@@ -262,7 +309,9 @@ export const LandingCTA = () => {
                         <option value="small">Small (2-5 providers)</option>
                         <option value="medium">Medium (6-20 providers)</option>
                         <option value="large">Large (21-50 providers)</option>
-                        <option value="enterprise">Enterprise (50+ providers)</option>
+                        <option value="enterprise">
+                          Enterprise (50+ providers)
+                        </option>
                       </select>
                     </div>
 
@@ -287,7 +336,10 @@ export const LandingCTA = () => {
                     </button>
                   </form>
 
-                  <p className="text-center text-xs text-[#888888] mt-4" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-center text-xs text-[#888888] mt-4"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     By submitting, you agree to our{" "}
                     <a href="#" className="text-[#1d326d] hover:underline">
                       Privacy Policy
@@ -305,5 +357,5 @@ export const LandingCTA = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

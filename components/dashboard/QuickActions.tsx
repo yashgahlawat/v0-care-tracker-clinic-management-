@@ -1,10 +1,21 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { UserPlus, CalendarPlus, FileText, CreditCard, X, Mail, Phone, User, Calendar, Clock } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  Calendar,
+  CalendarPlus,
+  Clock,
+  CreditCard,
+  FileText,
+  Mail,
+  Phone,
+  User,
+  UserPlus,
+  X,
+} from "lucide-react";
+import { useState } from "react";
 
 const actions = [
   {
@@ -36,17 +47,19 @@ const actions = [
     color: "bg-violet-500",
     hoverColor: "hover:bg-violet-600",
   },
-]
+];
 
 export const QuickActions = () => {
-  const [activeModal, setActiveModal] = useState<string | null>(null)
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   return (
     <>
       <div className="mb-6">
-        <h2 className="text-sm font-medium text-gray-500 mb-3">Quick Actions</h2>
+        <h2 className="text-sm font-medium text-gray-500 mb-3">
+          Quick Actions
+        </h2>
         <div className="flex flex-wrap gap-3">
-          {actions.map((action) => (
+          {actions.map(action => (
             <motion.button
               key={action.id}
               whileHover={{ scale: 1.02 }}
@@ -70,9 +83,14 @@ export const QuickActions = () => {
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">First Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    First Name
+                  </label>
                   <div className="relative">
-                    <User size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <User
+                      size={18}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
                     <input
                       type="text"
                       placeholder="John"
@@ -81,7 +99,9 @@ export const QuickActions = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Last Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     placeholder="Smith"
@@ -90,9 +110,14 @@ export const QuickActions = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Email
+                </label>
                 <div className="relative">
-                  <Mail size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Mail
+                    size={18}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  />
                   <input
                     type="email"
                     placeholder="john@example.com"
@@ -101,9 +126,14 @@ export const QuickActions = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Phone
+                </label>
                 <div className="relative">
-                  <Phone size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Phone
+                    size={18}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  />
                   <input
                     type="tel"
                     placeholder="+1 (555) 000-0000"
@@ -112,7 +142,9 @@ export const QuickActions = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Date of Birth</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Date of Birth
+                </label>
                 <input
                   type="date"
                   className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base"
@@ -138,10 +170,15 @@ export const QuickActions = () => {
         )}
 
         {activeModal === "add-appointment" && (
-          <Modal title="Schedule Appointment" onClose={() => setActiveModal(null)}>
+          <Modal
+            title="Schedule Appointment"
+            onClose={() => setActiveModal(null)}
+          >
             <form className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Patient</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Patient
+                </label>
                 <select className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base bg-white">
                   <option value="">Select patient...</option>
                   <option value="1">Emma Thompson</option>
@@ -150,7 +187,9 @@ export const QuickActions = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Provider</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Provider
+                </label>
                 <select className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base bg-white">
                   <option value="">Select provider...</option>
                   <option value="1">Dr. Sarah Chen</option>
@@ -160,9 +199,14 @@ export const QuickActions = () => {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Date</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Date
+                  </label>
                   <div className="relative">
-                    <Calendar size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <Calendar
+                      size={18}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
                     <input
                       type="date"
                       className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base"
@@ -170,9 +214,14 @@ export const QuickActions = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Time</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Time
+                  </label>
                   <div className="relative">
-                    <Clock size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <Clock
+                      size={18}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
                     <input
                       type="time"
                       className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base"
@@ -181,7 +230,9 @@ export const QuickActions = () => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Appointment Type</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Appointment Type
+                </label>
                 <select className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1d326d]/20 focus:border-[#1d326d] outline-none transition-all text-base bg-white">
                   <option value="consultation">Consultation</option>
                   <option value="follow-up">Follow-up</option>
@@ -190,7 +241,9 @@ export const QuickActions = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Notes</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Notes
+                </label>
                 <textarea
                   rows={3}
                   placeholder="Add any notes..."
@@ -217,17 +270,17 @@ export const QuickActions = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
 const Modal = ({
   title,
   children,
   onClose,
 }: {
-  title: string
-  children: React.ReactNode
-  onClose: () => void
+  title: string;
+  children: React.ReactNode;
+  onClose: () => void;
 }) => {
   return (
     <motion.div
@@ -243,16 +296,19 @@ const Modal = ({
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.2 }}
         className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
           <h2 className="text-lg font-semibold text-[#1d326d]">{title}</h2>
-          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-400">
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-400"
+          >
             <X size={20} />
           </button>
         </div>
         <div className="p-5">{children}</div>
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};

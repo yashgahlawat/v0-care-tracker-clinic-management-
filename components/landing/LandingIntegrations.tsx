@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const integrations = [
   { name: "Epic", category: "EHR" },
@@ -16,7 +16,7 @@ const integrations = [
   { name: "Stripe", category: "Payments" },
   { name: "Twilio", category: "Communications" },
   { name: "Zoom", category: "Telehealth" },
-]
+];
 
 export const LandingIntegrations = () => {
   return (
@@ -42,30 +42,40 @@ export const LandingIntegrations = () => {
             >
               Connects with Your Existing Tools
             </h2>
-            <p className="text-lg text-[#555555] leading-relaxed mb-8" style={{ fontFamily: "Inter" }}>
-              CareTracker seamlessly integrates with over 100+ healthcare systems including EHRs, lab networks,
-              e-prescribing platforms, and payment processors. No more switching between multiple systems.
+            <p
+              className="text-lg text-[#555555] leading-relaxed mb-8"
+              style={{ fontFamily: "Inter" }}
+            >
+              CareTracker seamlessly integrates with over 100+ healthcare
+              systems including EHRs, lab networks, e-prescribing platforms, and
+              payment processors. No more switching between multiple systems.
             </p>
 
             {/* Integration Categories */}
             <div className="space-y-4 mb-8">
-              {["EHR/EMR Systems", "Laboratory Networks", "Payment Processing", "Telehealth Platforms"].map(
-                (category, index) => (
-                  <motion.div
-                    key={category}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="flex items-center gap-3"
+              {[
+                "EHR/EMR Systems",
+                "Laboratory Networks",
+                "Payment Processing",
+                "Telehealth Platforms",
+              ].map((category, index) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-center gap-3"
+                >
+                  <div className="w-2 h-2 rounded-full bg-[#fcc41d]" />
+                  <span
+                    className="text-[#1d326d] font-medium"
+                    style={{ fontFamily: "Figtree" }}
                   >
-                    <div className="w-2 h-2 rounded-full bg-[#fcc41d]" />
-                    <span className="text-[#1d326d] font-medium" style={{ fontFamily: "Figtree" }}>
-                      {category}
-                    </span>
-                  </motion.div>
-                ),
-              )}
+                    {category}
+                  </span>
+                </motion.div>
+              ))}
             </div>
 
             <button
@@ -96,14 +106,23 @@ export const LandingIntegrations = () => {
                   className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1d326d]/20 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-[#f8fafc] flex items-center justify-center mb-3 group-hover:bg-[#1d326d]/5 transition-colors">
-                    <span className="text-lg font-bold text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                    <span
+                      className="text-lg font-bold text-[#1d326d]"
+                      style={{ fontFamily: "Figtree" }}
+                    >
                       {integration.name.charAt(0)}
                     </span>
                   </div>
-                  <p className="text-sm font-semibold text-[#1d326d] mb-1 truncate" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-sm font-semibold text-[#1d326d] mb-1 truncate"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {integration.name}
                   </p>
-                  <p className="text-xs text-[#666666]" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-xs text-[#666666]"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {integration.category}
                   </p>
                 </motion.div>
@@ -117,5 +136,5 @@ export const LandingIntegrations = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

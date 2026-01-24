@@ -1,29 +1,55 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Bell, Search, Menu, ChevronDown, User, Settings, LogOut } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  Bell,
+  ChevronDown,
+  LogOut,
+  Menu,
+  Search,
+  Settings,
+  User,
+} from "lucide-react";
+import { useState } from "react";
 
 interface DashboardHeaderProps {
-  sidebarOpen: boolean
-  onToggleSidebar: () => void
+  sidebarOpen: boolean;
+  onToggleSidebar: () => void;
 }
 
 export const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
-  const [showUserMenu, setShowUserMenu] = useState(false)
-  const [showNotifications, setShowNotifications] = useState(false)
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const notifications = [
-    { id: 1, text: "New appointment request from John Smith", time: "2 min ago", unread: true },
-    { id: 2, text: "Lab results ready for Patient #1234", time: "15 min ago", unread: true },
-    { id: 3, text: "Staff meeting reminder at 3:00 PM", time: "1 hour ago", unread: false },
-  ]
+    {
+      id: 1,
+      text: "New appointment request from John Smith",
+      time: "2 min ago",
+      unread: true,
+    },
+    {
+      id: 2,
+      text: "Lab results ready for Patient #1234",
+      time: "15 min ago",
+      unread: true,
+    },
+    {
+      id: 3,
+      text: "Staff meeting reminder at 3:00 PM",
+      time: "1 hour ago",
+      unread: false,
+    },
+  ];
 
   return (
     <header className="fixed top-0 right-0 left-0 lg:left-auto h-20 bg-white border-b border-gray-200 z-30 px-6 flex items-center justify-between">
       {/* Left Section */}
       <div className="flex items-center gap-4">
-        <button onClick={onToggleSidebar} className="lg:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-600">
+        <button
+          onClick={onToggleSidebar}
+          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-600"
+        >
           <Menu size={24} />
         </button>
 
@@ -63,23 +89,31 @@ export const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
                 className="absolute right-0 top-full mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden"
               >
                 <div className="p-4 border-b border-gray-100">
-                  <h3 className="font-semibold text-[#0A8FDC]">Notifications</h3>
+                  <h3 className="font-semibold text-[#0A8FDC]">
+                    Notifications
+                  </h3>
                 </div>
                 <div className="max-h-80 overflow-y-auto">
-                  {notifications.map((notification) => (
+                  {notifications.map(notification => (
                     <div
                       key={notification.id}
                       className={`p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer ${
                         notification.unread ? "bg-blue-50/50" : ""
                       }`}
                     >
-                      <p className="text-sm text-gray-700">{notification.text}</p>
-                      <p className="text-xs text-gray-400 mt-1">{notification.time}</p>
+                      <p className="text-sm text-gray-700">
+                        {notification.text}
+                      </p>
+                      <p className="text-xs text-gray-400 mt-1">
+                        {notification.time}
+                      </p>
                     </div>
                   ))}
                 </div>
                 <div className="p-3 text-center border-t border-gray-100">
-                  <button className="text-sm text-[#0A8FDC] font-medium hover:underline">View all notifications</button>
+                  <button className="text-sm text-[#0A8FDC] font-medium hover:underline">
+                    View all notifications
+                  </button>
                 </div>
               </motion.div>
             )}
@@ -96,7 +130,9 @@ export const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
               DR
             </div>
             <div className="hidden md:block text-left">
-              <p className="text-sm font-semibold text-gray-800">Dr. Rachel Kim</p>
+              <p className="text-sm font-semibold text-gray-800">
+                Dr. Rachel Kim
+              </p>
               <p className="text-xs text-gray-500">Admin</p>
             </div>
             <ChevronDown size={18} className="hidden md:block text-gray-400" />
@@ -113,7 +149,9 @@ export const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
               >
                 <div className="p-4 border-b border-gray-100">
                   <p className="font-semibold text-gray-800">Dr. Rachel Kim</p>
-                  <p className="text-sm text-gray-500">rachel@caretracker.com</p>
+                  <p className="text-sm text-gray-500">
+                    rachel@caretracker.com
+                  </p>
                 </div>
                 <div className="py-2">
                   <button className="w-full flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors">
@@ -137,5 +175,5 @@ export const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
-  MessageCircle,
-  DollarSign,
-  Shield,
-  Calendar,
-  Users,
-  FileText,
-  CreditCard,
   BarChart3,
-  Video,
   Bell,
-  Stethoscope,
+  Calendar,
   Clock,
-} from "lucide-react"
+  CreditCard,
+  DollarSign,
+  FileText,
+  MessageCircle,
+  Shield,
+  Stethoscope,
+  Users,
+  Video,
+} from "lucide-react";
 
 const deepDiveFeatures = [
   {
@@ -23,7 +23,11 @@ const deepDiveFeatures = [
     title: "Never Leave a Slot Empty Again",
     description:
       "When a patient cancels, our AI instantly messages your waitlist via WhatsApp. Slots are filled automatically—no admin overhead, no lost revenue. It's like having a full-time receptionist working 24/7.",
-    benefits: ["Auto-fill from waitlist", "2-way WhatsApp chat", "90% fill rate"],
+    benefits: [
+      "Auto-fill from waitlist",
+      "2-way WhatsApp chat",
+      "90% fill rate",
+    ],
     visual: "chat",
     alignment: "left",
   },
@@ -33,7 +37,11 @@ const deepDiveFeatures = [
     title: "Get Paid 3x Faster with Smart Billing",
     description:
       "Automated invoice generation, insurance claims, and payment reminders mean you spend less time chasing payments. Real-time revenue dashboards show exactly where your money is—and where it's going.",
-    benefits: ["Auto-invoice on visit", "Insurance pre-checks", "Payment analytics"],
+    benefits: [
+      "Auto-invoice on visit",
+      "Insurance pre-checks",
+      "Payment analytics",
+    ],
     visual: "revenue",
     alignment: "right",
   },
@@ -47,55 +55,64 @@ const deepDiveFeatures = [
     visual: "permissions",
     alignment: "left",
   },
-]
+];
 
 const toolkitFeatures = [
   {
     icon: Calendar,
     title: "Smart Scheduling",
-    description: "AI-powered booking with conflict detection and automatic waitlist management.",
+    description:
+      "AI-powered booking with conflict detection and automatic waitlist management.",
   },
   {
     icon: Users,
     title: "Patient Management",
-    description: "360° patient profiles with medical history, documents, and communication logs.",
+    description:
+      "360° patient profiles with medical history, documents, and communication logs.",
   },
   {
     icon: FileText,
     title: "Electronic Health Records",
-    description: "Secure EHR with custom templates, e-prescriptions, and lab integrations.",
+    description:
+      "Secure EHR with custom templates, e-prescriptions, and lab integrations.",
   },
   {
     icon: Video,
     title: "Telehealth",
-    description: "HD video consultations with virtual waiting rooms and screen sharing.",
+    description:
+      "HD video consultations with virtual waiting rooms and screen sharing.",
   },
   {
     icon: Bell,
     title: "Automated Reminders",
-    description: "Multi-channel appointment reminders via SMS, email, and voice calls.",
+    description:
+      "Multi-channel appointment reminders via SMS, email, and voice calls.",
   },
   {
     icon: Stethoscope,
     title: "Clinical Workflows",
-    description: "Customizable protocols and care pathways to standardize delivery.",
+    description:
+      "Customizable protocols and care pathways to standardize delivery.",
   },
   {
     icon: Clock,
     title: "Time Tracking",
-    description: "Staff scheduling with overtime alerts and payroll integration.",
+    description:
+      "Staff scheduling with overtime alerts and payroll integration.",
   },
   {
     icon: BarChart3,
     title: "Analytics & Reporting",
-    description: "Real-time dashboards for practice performance and revenue tracking.",
+    description:
+      "Real-time dashboards for practice performance and revenue tracking.",
   },
   {
     icon: CreditCard,
     title: "Payment Processing",
-    description: "Integrated payment gateway with split billing and payment plans.",
+    description:
+      "Integrated payment gateway with split billing and payment plans.",
   },
-]
+];
 
 // Mock visual components for the deep dive sections
 const ChatInterfaceVisual = () => (
@@ -127,10 +144,12 @@ const ChatInterfaceVisual = () => (
       </div>
     </div>
     <div className="pt-4 border-t border-gray-100">
-      <div className="text-xs text-gray-500 text-center">Messages delivered via WhatsApp</div>
+      <div className="text-xs text-gray-500 text-center">
+        Messages delivered via WhatsApp
+      </div>
     </div>
   </div>
-)
+);
 
 const RevenueGraphVisual = () => (
   <div className="bg-white shadow-2xl rounded-2xl p-6">
@@ -143,9 +162,19 @@ const RevenueGraphVisual = () => (
       </div>
     </div>
     <div className="relative h-48">
-      <svg className="w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
+      <svg
+        className="w-full h-full"
+        viewBox="0 0 400 200"
+        preserveAspectRatio="none"
+      >
         <defs>
-          <linearGradient id="revenueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient
+            id="revenueGradient"
+            x1="0%"
+            y1="0%"
+            x2="0%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#fcc41d" stopOpacity="0.3" />
             <stop offset="100%" stopColor="#fcc41d" stopOpacity="0" />
           </linearGradient>
@@ -177,28 +206,56 @@ const RevenueGraphVisual = () => (
       </div>
     </div>
   </div>
-)
+);
 
 const PermissionsMatrixVisual = () => (
   <div className="bg-white shadow-2xl rounded-2xl p-6">
     <div className="mb-4">
-      <div className="text-sm font-semibold text-[#1d326d] mb-2">Role Permissions</div>
-      <div className="text-xs text-gray-500">Granular access control by user role</div>
+      <div className="text-sm font-semibold text-[#1d326d] mb-2">
+        Role Permissions
+      </div>
+      <div className="text-xs text-gray-500">
+        Granular access control by user role
+      </div>
     </div>
     <div className="space-y-3">
       {[
-        { role: "Principal GP", permissions: ["Full Access", "Billing", "Staff Mgmt"], color: "bg-[#fcc41d]" },
-        { role: "Practice Manager", permissions: ["Scheduling", "Billing", "Reports"], color: "bg-blue-500" },
-        { role: "Locum Doctor", permissions: ["Own Patients", "Clinical Notes"], color: "bg-green-500" },
-        { role: "Front Desk", permissions: ["Scheduling", "Check-in"], color: "bg-purple-500" },
+        {
+          role: "Principal GP",
+          permissions: ["Full Access", "Billing", "Staff Mgmt"],
+          color: "bg-[#fcc41d]",
+        },
+        {
+          role: "Practice Manager",
+          permissions: ["Scheduling", "Billing", "Reports"],
+          color: "bg-blue-500",
+        },
+        {
+          role: "Locum Doctor",
+          permissions: ["Own Patients", "Clinical Notes"],
+          color: "bg-green-500",
+        },
+        {
+          role: "Front Desk",
+          permissions: ["Scheduling", "Check-in"],
+          color: "bg-purple-500",
+        },
       ].map((item, index) => (
-        <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+        <div
+          key={index}
+          className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+        >
           <div className={`w-3 h-3 rounded-full ${item.color}`} />
           <div className="flex-1">
-            <div className="text-sm font-medium text-[#1d326d]">{item.role}</div>
+            <div className="text-sm font-medium text-[#1d326d]">
+              {item.role}
+            </div>
             <div className="text-xs text-gray-500 flex gap-2 mt-1">
               {item.permissions.map((perm, i) => (
-                <span key={i} className="bg-white px-2 py-0.5 rounded border border-gray-200">
+                <span
+                  key={i}
+                  className="bg-white px-2 py-0.5 rounded border border-gray-200"
+                >
                   {perm}
                 </span>
               ))}
@@ -208,7 +265,7 @@ const PermissionsMatrixVisual = () => (
       ))}
     </div>
   </div>
-)
+);
 
 export function FeaturesPageContent() {
   return (
@@ -216,7 +273,11 @@ export function FeaturesPageContent() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1d326d] mb-6 leading-tight">
               Built for High-Performance Clinics
             </h1>
@@ -242,30 +303,48 @@ export function FeaturesPageContent() {
               }`}
             >
               {/* Text Content */}
-              <div className={feature.alignment === "right" ? "lg:col-start-2" : ""}>
+              <div
+                className={
+                  feature.alignment === "right" ? "lg:col-start-2" : ""
+                }
+              >
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#fcc41d] text-[#1d326d] rounded-full text-sm font-semibold mb-4">
                   <feature.icon className="w-4 h-4" />
                   {feature.badge}
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-[#1d326d] mb-4">{feature.title}</h2>
-                <p className="text-lg text-slate-600 mb-6 leading-relaxed">{feature.description}</p>
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#1d326d] mb-4">
+                  {feature.title}
+                </h2>
+                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  {feature.description}
+                </p>
                 <ul className="space-y-3">
                   {feature.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-6 h-6 rounded-full bg-[#fcc41d]/20 flex items-center justify-center flex-shrink-0">
                         <div className="w-2 h-2 bg-[#fcc41d] rounded-full" />
                       </div>
-                      <span className="text-[#1d326d] font-medium">{benefit}</span>
+                      <span className="text-[#1d326d] font-medium">
+                        {benefit}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Visual Content */}
-              <div className={feature.alignment === "right" ? "lg:col-start-1 lg:row-start-1" : ""}>
+              <div
+                className={
+                  feature.alignment === "right"
+                    ? "lg:col-start-1 lg:row-start-1"
+                    : ""
+                }
+              >
                 {feature.visual === "chat" && <ChatInterfaceVisual />}
                 {feature.visual === "revenue" && <RevenueGraphVisual />}
-                {feature.visual === "permissions" && <PermissionsMatrixVisual />}
+                {feature.visual === "permissions" && (
+                  <PermissionsMatrixVisual />
+                )}
               </div>
             </motion.div>
           ))}
@@ -282,7 +361,9 @@ export function FeaturesPageContent() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1d326d] mb-4">The Complete Toolkit</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1d326d] mb-4">
+              The Complete Toolkit
+            </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Everything else you need to run a modern healthcare practice.
             </p>
@@ -301,8 +382,12 @@ export function FeaturesPageContent() {
                 <div className="w-12 h-12 bg-[#1d326d]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#1d326d] transition-colors duration-300">
                   <feature.icon className="w-6 h-6 text-[#1d326d] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-bold text-[#1d326d] mb-2">{feature.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-bold text-[#1d326d] mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -318,8 +403,12 @@ export function FeaturesPageContent() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Practice?</h2>
-            <p className="text-xl text-white/80 mb-8">Start your 14-day free trial today. No credit card required.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Practice?
+            </h2>
+            <p className="text-xl text-white/80 mb-8">
+              Start your 14-day free trial today. No credit card required.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/signup"
@@ -338,5 +427,5 @@ export function FeaturesPageContent() {
         </div>
       </section>
     </main>
-  )
+  );
 }

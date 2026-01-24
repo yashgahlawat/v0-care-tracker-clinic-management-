@@ -1,7 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Clock, MoreHorizontal, Video, MapPin, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  AlertCircle,
+  CheckCircle2,
+  Clock,
+  MapPin,
+  MoreHorizontal,
+  Video,
+  XCircle,
+} from "lucide-react";
 
 const appointments = [
   {
@@ -64,14 +72,34 @@ const appointments = [
     avatar: "DK",
     isVideo: false,
   },
-]
+];
 
 const statusConfig = {
-  completed: { icon: CheckCircle2, color: "text-emerald-500", bg: "bg-emerald-50", label: "Completed" },
-  "in-progress": { icon: AlertCircle, color: "text-amber-500", bg: "bg-amber-50", label: "In Progress" },
-  upcoming: { icon: Clock, color: "text-blue-500", bg: "bg-blue-50", label: "Upcoming" },
-  cancelled: { icon: XCircle, color: "text-red-500", bg: "bg-red-50", label: "Cancelled" },
-}
+  completed: {
+    icon: CheckCircle2,
+    color: "text-emerald-500",
+    bg: "bg-emerald-50",
+    label: "Completed",
+  },
+  "in-progress": {
+    icon: AlertCircle,
+    color: "text-amber-500",
+    bg: "bg-amber-50",
+    label: "In Progress",
+  },
+  upcoming: {
+    icon: Clock,
+    color: "text-blue-500",
+    bg: "bg-blue-50",
+    label: "Upcoming",
+  },
+  cancelled: {
+    icon: XCircle,
+    color: "text-red-500",
+    bg: "bg-red-50",
+    label: "Cancelled",
+  },
+};
 
 export const TodaysAppointments = () => {
   return (
@@ -83,16 +111,23 @@ export const TodaysAppointments = () => {
     >
       <div className="p-4 sm:p-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
-          <h2 className="text-base sm:text-lg font-semibold text-[#0A8FDC]">Today&apos;s Appointments</h2>
-          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">Thursday, December 5, 2025</p>
+          <h2 className="text-base sm:text-lg font-semibold text-[#0A8FDC]">
+            Today&apos;s Appointments
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+            Thursday, December 5, 2025
+          </p>
         </div>
-        <button className="text-[#0A8FDC] text-sm font-medium hover:underline self-start sm:self-auto">View All</button>
+        <button className="text-[#0A8FDC] text-sm font-medium hover:underline self-start sm:self-auto">
+          View All
+        </button>
       </div>
 
       <div className="divide-y divide-gray-50">
-        {appointments.map((appointment) => {
-          const status = statusConfig[appointment.status as keyof typeof statusConfig]
-          const StatusIcon = status.icon
+        {appointments.map(appointment => {
+          const status =
+            statusConfig[appointment.status as keyof typeof statusConfig];
+          const StatusIcon = status.icon;
 
           return (
             <div
@@ -111,8 +146,15 @@ export const TodaysAppointments = () => {
                   {/* Info - Mobile view */}
                   <div className="flex-1 min-w-0 sm:hidden">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-medium text-gray-900 text-sm truncate">{appointment.patient}</h3>
-                      {appointment.isVideo && <Video size={14} className="text-[#0A8FDC] flex-shrink-0" />}
+                      <h3 className="font-medium text-gray-900 text-sm truncate">
+                        {appointment.patient}
+                      </h3>
+                      {appointment.isVideo && (
+                        <Video
+                          size={14}
+                          className="text-[#0A8FDC] flex-shrink-0"
+                        />
+                      )}
                     </div>
                     <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
                       <Clock size={12} />
@@ -123,9 +165,13 @@ export const TodaysAppointments = () => {
                   </div>
 
                   {/* Status badge - Mobile */}
-                  <div className={`flex sm:hidden items-center gap-1 px-2 py-1 rounded-full ${status.bg}`}>
+                  <div
+                    className={`flex sm:hidden items-center gap-1 px-2 py-1 rounded-full ${status.bg}`}
+                  >
                     <StatusIcon size={12} className={status.color} />
-                    <span className={`text-xs font-medium ${status.color}`}>{status.label}</span>
+                    <span className={`text-xs font-medium ${status.color}`}>
+                      {status.label}
+                    </span>
                   </div>
                 </div>
 
@@ -133,28 +179,49 @@ export const TodaysAppointments = () => {
                 <div className="hidden sm:flex flex-1 min-w-0 items-center gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-medium text-gray-900 truncate">{appointment.patient}</h3>
-                      {appointment.isVideo && <Video size={16} className="text-[#0A8FDC] flex-shrink-0" />}
+                      <h3 className="font-medium text-gray-900 truncate">
+                        {appointment.patient}
+                      </h3>
+                      {appointment.isVideo && (
+                        <Video
+                          size={16}
+                          className="text-[#0A8FDC] flex-shrink-0"
+                        />
+                      )}
                     </div>
                     <div className="flex items-center gap-3 mt-1 flex-wrap">
                       <span className="text-sm text-gray-500 flex items-center gap-1">
                         <Clock size={14} />
                         {appointment.time}
                       </span>
-                      <span className="text-sm text-gray-400 hidden md:inline">•</span>
-                      <span className="text-sm text-gray-500 hidden md:inline">{appointment.duration}</span>
-                      <span className="text-sm text-gray-400 hidden lg:inline">•</span>
+                      <span className="text-sm text-gray-400 hidden md:inline">
+                        •
+                      </span>
+                      <span className="text-sm text-gray-500 hidden md:inline">
+                        {appointment.duration}
+                      </span>
+                      <span className="text-sm text-gray-400 hidden lg:inline">
+                        •
+                      </span>
                       <span className="text-sm text-gray-500 hidden lg:flex items-center gap-1">
-                        {appointment.isVideo ? <Video size={14} /> : <MapPin size={14} />}
+                        {appointment.isVideo ? (
+                          <Video size={14} />
+                        ) : (
+                          <MapPin size={14} />
+                        )}
                         {appointment.type}
                       </span>
                     </div>
                   </div>
 
                   {/* Status - Desktop */}
-                  <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${status.bg}`}>
+                  <div
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${status.bg}`}
+                  >
                     <StatusIcon size={14} className={status.color} />
-                    <span className={`text-xs font-medium ${status.color}`}>{status.label}</span>
+                    <span className={`text-xs font-medium ${status.color}`}>
+                      {status.label}
+                    </span>
                   </div>
 
                   {/* More Button */}
@@ -164,9 +231,9 @@ export const TodaysAppointments = () => {
                 </div>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </motion.div>
-  )
-}
+  );
+};

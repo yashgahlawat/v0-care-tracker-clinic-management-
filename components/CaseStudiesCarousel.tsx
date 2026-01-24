@@ -1,25 +1,26 @@
-"use client"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useState } from "react";
 
 type CaseStudy = {
-  id: string
-  clinicName: string
-  specialty: string
-  title: string
-  quote: string
-  attribution: string
-  stats: { label: string; value: string }[]
-  accentColor: string
-}
+  id: string;
+  clinicName: string;
+  specialty: string;
+  title: string;
+  quote: string;
+  attribution: string;
+  stats: { label: string; value: string }[];
+  accentColor: string;
+};
 
 const caseStudies: CaseStudy[] = [
   {
     id: "family-care",
     clinicName: "Family Care Medical Center",
     specialty: "Primary Care",
-    title: "Family Care Medical Center reduced administrative workload by 45% with CareTracker.",
+    title:
+      "Family Care Medical Center reduced administrative workload by 45% with CareTracker.",
     quote:
       "CareTracker transformed our practice. We went from drowning in paperwork to spending more time with patients. The scheduling automation alone saved us 20 hours per week.",
     attribution: "Dr. Sarah Mitchell, Medical Director",
@@ -34,7 +35,8 @@ const caseStudies: CaseStudy[] = [
     id: "westside-ortho",
     clinicName: "Westside Orthopedics",
     specialty: "Orthopedics",
-    title: "Westside Orthopedics scaled to 3 locations while improving operational efficiency.",
+    title:
+      "Westside Orthopedics scaled to 3 locations while improving operational efficiency.",
     quote:
       "When we expanded to multiple locations, CareTracker made it seamless. Real-time dashboards give us visibility across all clinics, and our revenue cycle improved dramatically.",
     attribution: "James Chen, Practice Administrator",
@@ -49,7 +51,8 @@ const caseStudies: CaseStudy[] = [
     id: "pediatric-partners",
     clinicName: "Pediatric Partners",
     specialty: "Pediatrics",
-    title: "Pediatric Partners achieved 98% patient retention with CareTracker's engagement tools.",
+    title:
+      "Pediatric Partners achieved 98% patient retention with CareTracker's engagement tools.",
     quote:
       "Parents love the patient portal for scheduling and messaging. Our automated vaccine reminders have increased immunization compliance to 95%. CareTracker understands healthcare.",
     attribution: "Dr. Amanda Rodriguez, Founder",
@@ -60,20 +63,22 @@ const caseStudies: CaseStudy[] = [
     ],
     accentColor: "#1d326d",
   },
-]
+];
 
 export const CaseStudiesCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % caseStudies.length)
-  }
+    setCurrentIndex(prev => (prev + 1) % caseStudies.length);
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length)
-  }
+    setCurrentIndex(
+      prev => (prev - 1 + caseStudies.length) % caseStudies.length,
+    );
+  };
 
-  const currentStudy = caseStudies[currentIndex]
+  const currentStudy = caseStudies[currentIndex];
 
   return (
     <section className="w-full py-16 bg-slate-50">
@@ -95,7 +100,8 @@ export const CaseStudiesCarousel = () => {
             className="text-base lg:text-lg leading-6 lg:leading-7 text-[#666666] max-w-2xl mx-auto"
             style={{ fontFamily: "var(--font-roboto), Roboto" }}
           >
-            See how clinics across specialties are transforming their operations with CareTracker.
+            See how clinics across specialties are transforming their operations
+            with CareTracker.
           </p>
         </motion.div>
 
@@ -116,9 +122,14 @@ export const CaseStudiesCarousel = () => {
                     <div className="flex items-center gap-3 mb-4 lg:mb-6">
                       <div
                         className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${currentStudy.accentColor}15` }}
+                        style={{
+                          backgroundColor: `${currentStudy.accentColor}15`,
+                        }}
                       >
-                        <Quote className="w-4 h-4 lg:w-5 lg:h-5" style={{ color: currentStudy.accentColor }} />
+                        <Quote
+                          className="w-4 h-4 lg:w-5 lg:h-5"
+                          style={{ color: currentStudy.accentColor }}
+                        />
                       </div>
                       <div>
                         <p
@@ -169,7 +180,10 @@ export const CaseStudiesCarousel = () => {
                       >
                         <p
                           className="text-xl sm:text-2xl lg:text-4xl font-medium mb-1"
-                          style={{ color: currentStudy.accentColor, fontFamily: "var(--font-inter), Inter" }}
+                          style={{
+                            color: currentStudy.accentColor,
+                            fontFamily: "var(--font-inter), Inter",
+                          }}
                         >
                           {stat.value}
                         </p>
@@ -219,5 +233,5 @@ export const CaseStudiesCarousel = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

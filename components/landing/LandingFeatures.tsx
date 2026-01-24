@@ -1,58 +1,75 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Calendar, Users, FileText, CreditCard, MessageSquare, BarChart3, Shield, Clock } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  BarChart3,
+  Calendar,
+  Clock,
+  CreditCard,
+  FileText,
+  MessageSquare,
+  Shield,
+  Users,
+} from "lucide-react";
 
 const features = [
   {
     icon: Calendar,
     title: "Smart Scheduling",
-    description: "AI-powered appointment scheduling with automated reminders, reducing no-shows by up to 40%.",
+    description:
+      "AI-powered appointment scheduling with automated reminders, reducing no-shows by up to 40%.",
     color: "#1d326d",
   },
   {
     icon: Users,
     title: "Patient Management",
-    description: "Comprehensive patient profiles with medical history, documents, and communication logs in one place.",
+    description:
+      "Comprehensive patient profiles with medical history, documents, and communication logs in one place.",
     color: "#1d326d",
   },
   {
     icon: FileText,
     title: "Electronic Health Records",
-    description: "Secure, cloud-based EHR system with customizable templates and quick charting tools.",
+    description:
+      "Secure, cloud-based EHR system with customizable templates and quick charting tools.",
     color: "#1d326d",
   },
   {
     icon: CreditCard,
     title: "Billing & Payments",
-    description: "Streamlined billing with insurance verification, claims management, and online payments.",
+    description:
+      "Streamlined billing with insurance verification, claims management, and online payments.",
     color: "#1d326d",
   },
   {
     icon: MessageSquare,
     title: "Patient Communication",
-    description: "Secure messaging, telehealth integration, and automated appointment reminders via SMS and email.",
+    description:
+      "Secure messaging, telehealth integration, and automated appointment reminders via SMS and email.",
     color: "#1d326d",
   },
   {
     icon: BarChart3,
     title: "Analytics & Reporting",
-    description: "Real-time insights into practice performance, revenue trends, and patient satisfaction metrics.",
+    description:
+      "Real-time insights into practice performance, revenue trends, and patient satisfaction metrics.",
     color: "#1d326d",
   },
   {
     icon: Shield,
     title: "HIPAA Compliance",
-    description: "Enterprise-grade security with encryption, audit logs, and automatic compliance monitoring.",
+    description:
+      "Enterprise-grade security with encryption, audit logs, and automatic compliance monitoring.",
     color: "#1d326d",
   },
   {
     icon: Clock,
     title: "Time Savings",
-    description: "Automate repetitive tasks and save up to 15 hours per week on administrative work.",
+    description:
+      "Automate repetitive tasks and save up to 15 hours per week on administrative work.",
     color: "#1d326d",
   },
-]
+];
 
 export const LandingFeatures = () => {
   return (
@@ -78,9 +95,12 @@ export const LandingFeatures = () => {
           >
             Everything You Need to Run Your Practice
           </h2>
-          <p className="text-lg text-[#555555] leading-relaxed" style={{ fontFamily: "Figtree" }}>
-            From scheduling to billing, our comprehensive suite of tools helps you focus on what matters most —
-            providing excellent patient care.
+          <p
+            className="text-lg text-[#555555] leading-relaxed"
+            style={{ fontFamily: "Figtree" }}
+          >
+            From scheduling to billing, our comprehensive suite of tools helps
+            you focus on what matters most — providing excellent patient care.
           </p>
         </motion.div>
 
@@ -100,14 +120,23 @@ export const LandingFeatures = () => {
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
                 style={{ backgroundColor: `${feature.color}10` }}
               >
-                <feature.icon className="w-7 h-7" style={{ color: feature.color }} />
+                <feature.icon
+                  className="w-7 h-7"
+                  style={{ color: feature.color }}
+                />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-[#1d326d] mb-3" style={{ fontFamily: "Figtree" }}>
+              <h3
+                className="text-xl font-semibold text-[#1d326d] mb-3"
+                style={{ fontFamily: "Figtree" }}
+              >
                 {feature.title}
               </h3>
-              <p className="text-[#666666] leading-relaxed text-base" style={{ fontFamily: "Figtree" }}>
+              <p
+                className="text-[#666666] leading-relaxed text-base"
+                style={{ fontFamily: "Figtree" }}
+              >
                 {feature.description}
               </p>
 
@@ -118,5 +147,5 @@ export const LandingFeatures = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

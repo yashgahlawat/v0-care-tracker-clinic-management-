@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Star, Quote } from "lucide-react"
+import { motion } from "framer-motion";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -31,7 +31,7 @@ const testimonials = [
     rating: 5,
     image: "/asian-female-doctor-headshot-professional.jpg",
   },
-]
+];
 
 export const LandingTestimonials = () => {
   return (
@@ -57,8 +57,12 @@ export const LandingTestimonials = () => {
           >
             Trusted by Thousands of Healthcare Providers
           </h2>
-          <p className="text-lg text-[#555555] leading-relaxed" style={{ fontFamily: "Inter" }}>
-            See what medical professionals are saying about their experience with CareTracker.
+          <p
+            className="text-lg text-[#555555] leading-relaxed"
+            style={{ fontFamily: "Inter" }}
+          >
+            See what medical professionals are saying about their experience
+            with CareTracker.
           </p>
         </motion.div>
 
@@ -83,12 +87,18 @@ export const LandingTestimonials = () => {
               {/* Rating */}
               <div className="flex items-center gap-1 mb-4 mt-2">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#fcc41d] text-[#fcc41d]" />
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-[#fcc41d] text-[#fcc41d]"
+                  />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-[#444444] leading-relaxed mb-6" style={{ fontFamily: "Figtree" }}>
+              <p
+                className="text-[#444444] leading-relaxed mb-6"
+                style={{ fontFamily: "Figtree" }}
+              >
                 "{testimonial.quote}"
               </p>
 
@@ -100,13 +110,22 @@ export const LandingTestimonials = () => {
                   className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm"
                 />
                 <div>
-                  <p className="font-semibold text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="font-semibold text-[#1d326d]"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-[#666666]" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-sm text-[#666666]"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {testimonial.role}
                   </p>
-                  <p className="text-xs text-[#888888]" style={{ fontFamily: "Figtree" }}>
+                  <p
+                    className="text-xs text-[#888888]"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     {testimonial.clinic}
                   </p>
                 </div>
@@ -123,12 +142,25 @@ export const LandingTestimonials = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-20 text-center"
         >
-          <p className="text-sm text-[#666666] mb-8 uppercase tracking-wide" style={{ fontFamily: "Figtree" }}>
+          <p
+            className="text-sm text-[#666666] mb-8 uppercase tracking-wide"
+            style={{ fontFamily: "Figtree" }}
+          >
             Trusted by leading healthcare organizations
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
-            {["Mayo Clinic", "Cleveland Clinic", "Kaiser", "HCA Healthcare", "Ascension"].map((logo) => (
-              <div key={logo} className="text-xl font-bold text-[#1d326d]/50" style={{ fontFamily: "Figtree" }}>
+            {[
+              "Mayo Clinic",
+              "Cleveland Clinic",
+              "Kaiser",
+              "HCA Healthcare",
+              "Ascension",
+            ].map(logo => (
+              <div
+                key={logo}
+                className="text-xl font-bold text-[#1d326d]/50"
+                style={{ fontFamily: "Figtree" }}
+              >
                 {logo}
               </div>
             ))}
@@ -136,5 +168,5 @@ export const LandingTestimonials = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};

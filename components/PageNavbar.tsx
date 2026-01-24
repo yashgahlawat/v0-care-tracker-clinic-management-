@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import Link from "next/link"
-import CareTrackerLogo from "./brand/CareTrackerLogo"
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import CareTrackerLogo from "./brand/CareTrackerLogo";
 
 const navigationLinks = [
   { name: "Home", href: "/" },
@@ -13,32 +13,34 @@ const navigationLinks = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Dashboard Preview", href: "/dashboard" },
-]
+];
 
 export const PageNavbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -49,7 +51,7 @@ export const PageNavbar = () => {
 
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-6">
-              {navigationLinks.map((link) => (
+              {navigationLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -96,7 +98,7 @@ export const PageNavbar = () => {
             className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border"
           >
             <div className="px-6 py-6 space-y-4">
-              {navigationLinks.map((link) => (
+              {navigationLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -127,5 +129,5 @@ export const PageNavbar = () => {
         )}
       </AnimatePresence>
     </nav>
-  )
-}
+  );
+};

@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { motion } from "framer-motion"
-import { Building2, UserCog, Users, ClipboardList } from "lucide-react"
+import { motion } from "framer-motion";
+import { Building2, ClipboardList, UserCog, Users } from "lucide-react";
 
 type Role = {
-  icon: React.ReactNode
-  title: string
-  description: string
-  permissions: string[]
-  color: string
-}
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  permissions: string[];
+  color: string;
+};
 
 const roles: Role[] = [
   {
@@ -66,7 +66,7 @@ const roles: Role[] = [
     ],
     color: "#1d326d",
   },
-]
+];
 
 export const UserRolesSection = () => {
   return (
@@ -89,8 +89,8 @@ export const UserRolesSection = () => {
             className="text-base lg:text-lg leading-6 lg:leading-7 text-[#666666] max-w-2xl mx-auto px-4 sm:px-0"
             style={{ fontFamily: "var(--font-roboto), Roboto" }}
           >
-            Granular permissions for every stakeholder. Ensure Principals maintain oversight while Staff access only
-            what they need.
+            Granular permissions for every stakeholder. Ensure Principals
+            maintain oversight while Staff access only what they need.
           </p>
         </motion.div>
 
@@ -101,12 +101,19 @@ export const UserRolesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-[#d1d5db] transition-colors duration-200"
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ backgroundColor: `${role.color}15`, color: role.color }}
+                style={{
+                  backgroundColor: `${role.color}15`,
+                  color: role.color,
+                }}
               >
                 {role.icon}
               </div>
@@ -116,7 +123,10 @@ export const UserRolesSection = () => {
               >
                 {role.title}
               </h3>
-              <p className="text-sm text-[#666666] mb-4" style={{ fontFamily: "var(--font-roboto), Roboto" }}>
+              <p
+                className="text-sm text-[#666666] mb-4"
+                style={{ fontFamily: "var(--font-roboto), Roboto" }}
+              >
                 {role.description}
               </p>
               <ul className="space-y-2">
@@ -126,11 +136,24 @@ export const UserRolesSection = () => {
                       className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ backgroundColor: `${role.color}15` }}
                     >
-                      <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke={role.color} strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-2.5 h-2.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke={role.color}
+                        strokeWidth={3}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </div>
-                    <span className="text-xs text-[#4b5563]" style={{ fontFamily: "var(--font-roboto), Roboto" }}>
+                    <span
+                      className="text-xs text-[#4b5563]"
+                      style={{ fontFamily: "var(--font-roboto), Roboto" }}
+                    >
                       {permission}
                     </span>
                   </li>
@@ -141,5 +164,5 @@ export const UserRolesSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

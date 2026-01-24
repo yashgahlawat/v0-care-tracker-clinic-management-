@@ -1,28 +1,28 @@
-"use client"
-import { Github, Mail } from "lucide-react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import CareTrackerLogo from "./brand/CareTrackerLogo"
+"use client";
+import { motion } from "framer-motion";
+import { Github, Mail } from "lucide-react";
+import Link from "next/link";
+import CareTrackerLogo from "./brand/CareTrackerLogo";
 
 type FooterLink = {
-  label: string
-  href: string
-}
+  label: string;
+  href: string;
+};
 
 type FooterSection = {
-  title: string
-  links: FooterLink[]
-}
+  title: string;
+  links: FooterLink[];
+};
 
 type FooterProps = {
-  companyName?: string
-  tagline?: string
-  sections?: FooterSection[]
+  companyName?: string;
+  tagline?: string;
+  sections?: FooterSection[];
   socialLinks?: {
-    github?: string
-    email?: string
-  }
-}
+    github?: string;
+    email?: string;
+  };
+};
 
 const defaultSections: FooterSection[] = [
   {
@@ -50,7 +50,7 @@ const defaultSections: FooterSection[] = [
       { label: "System Status", href: "/faq" },
     ],
   },
-]
+];
 
 export const Footer = ({
   companyName = "CareTracker",
@@ -62,7 +62,7 @@ export const Footer = ({
   },
 }: FooterProps) => {
   const renderLink = (link: FooterLink) => {
-    const isInternal = link.href.startsWith("/")
+    const isInternal = link.href.startsWith("/");
 
     if (isInternal) {
       return (
@@ -72,15 +72,18 @@ export const Footer = ({
         >
           {link.label}
         </Link>
-      )
+      );
     }
 
     return (
-      <a href={link.href} className="text-sm text-muted-foreground hover:text-[#1d326d] transition-colors duration-150">
+      <a
+        href={link.href}
+        className="text-sm text-muted-foreground hover:text-[#1d326d] transition-colors duration-150"
+      >
         {link.label}
       </a>
-    )
-  }
+    );
+  };
 
   return (
     <footer className="w-full bg-[#fafafa] border-t border-border">
@@ -98,7 +101,9 @@ export const Footer = ({
               <div className="mb-3">
                 <CareTrackerLogo size="md" href="/" />
               </div>
-              <p className="text-sm leading-5 text-muted-foreground">{tagline}</p>
+              <p className="text-sm leading-5 text-muted-foreground">
+                {tagline}
+              </p>
             </div>
 
             <div className="flex items-center gap-3 mt-6">
@@ -131,7 +136,11 @@ export const Footer = ({
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
               >
                 <h4 className="text-sm font-medium text-foreground mb-3 lg:mb-4 uppercase tracking-wide">
                   {section.title}
@@ -147,5 +156,5 @@ export const Footer = ({
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import Link from "next/link"
-import CareTrackerLogo from "../brand/CareTrackerLogo"
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import CareTrackerLogo from "../brand/CareTrackerLogo";
 
 const navigationLinks = [
   { name: "Home", href: "/" },
@@ -13,19 +13,19 @@ const navigationLinks = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Dashboard Preview", href: "/dashboard" },
-]
+];
 
 export const LandingNavbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
@@ -38,7 +38,7 @@ export const LandingNavbar = () => {
           <CareTrackerLogo size="md" />
 
           <div className="hidden lg:flex items-center gap-6">
-            {navigationLinks.map((link) => (
+            {navigationLinks.map(link => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -83,7 +83,7 @@ export const LandingNavbar = () => {
             className="lg:hidden bg-white border-t border-gray-100"
           >
             <div className="px-6 py-6 space-y-4">
-              {navigationLinks.map((link) => (
+              {navigationLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -114,5 +114,5 @@ export const LandingNavbar = () => {
         )}
       </AnimatePresence>
     </nav>
-  )
-}
+  );
+};

@@ -1,45 +1,55 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { TrendingUp, Zap, HeartHandshake, Award, ArrowRight } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Award,
+  HeartHandshake,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
 
 const reasons = [
   {
     icon: Zap,
     title: "Lightning Fast Setup",
-    description: "Get up and running in less than 24 hours. Our onboarding team handles data migration and training.",
+    description:
+      "Get up and running in less than 24 hours. Our onboarding team handles data migration and training.",
     stat: "24hrs",
     statLabel: "Average Setup Time",
   },
   {
     icon: TrendingUp,
     title: "Proven ROI",
-    description: "Our clients see an average 35% increase in revenue and 40% reduction in administrative costs.",
+    description:
+      "Our clients see an average 35% increase in revenue and 40% reduction in administrative costs.",
     stat: "35%",
     statLabel: "Revenue Increase",
   },
   {
     icon: HeartHandshake,
     title: "Dedicated Support",
-    description: "24/7 customer support with healthcare-trained specialists who understand your needs.",
+    description:
+      "24/7 customer support with healthcare-trained specialists who understand your needs.",
     stat: "24/7",
     statLabel: "Support Available",
   },
   {
     icon: Award,
     title: "Industry Recognition",
-    description: "Rated #1 clinic management software by Healthcare Tech Review for 3 consecutive years.",
+    description:
+      "Rated #1 clinic management software by Healthcare Tech Review for 3 consecutive years.",
     stat: "#1",
     statLabel: "Rated Software",
   },
-]
+];
 
 const stats = [
   { value: "2,500+", label: "Healthcare Providers" },
   { value: "5M+", label: "Patients Managed" },
   { value: "99.9%", label: "Uptime Guarantee" },
   { value: "4.9/5", label: "Customer Rating" },
-]
+];
 
 export const LandingWhyChooseUs = () => {
   return (
@@ -69,8 +79,8 @@ export const LandingWhyChooseUs = () => {
             className="text-base lg:text-lg text-white/70 leading-relaxed px-4 sm:px-0"
             style={{ fontFamily: "Roboto" }}
           >
-            We understand the unique challenges of running a healthcare practice. That's why we've built a solution that
-            actually works.
+            We understand the unique challenges of running a healthcare
+            practice. That's why we've built a solution that actually works.
           </p>
         </motion.div>
 
@@ -92,7 +102,10 @@ export const LandingWhyChooseUs = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-lg lg:text-xl font-semibold text-white mb-2" style={{ fontFamily: "Inter" }}>
+                  <h3
+                    className="text-lg lg:text-xl font-semibold text-white mb-2"
+                    style={{ fontFamily: "Inter" }}
+                  >
                     {reason.title}
                   </h3>
                   <p
@@ -104,10 +117,15 @@ export const LandingWhyChooseUs = () => {
 
                   {/* Stat */}
                   <div className="flex items-baseline gap-2">
-                    <span className="text-2xl lg:text-3xl font-bold text-[#4CAF50]" style={{ fontFamily: "Inter" }}>
+                    <span
+                      className="text-2xl lg:text-3xl font-bold text-[#4CAF50]"
+                      style={{ fontFamily: "Inter" }}
+                    >
                       {reason.stat}
                     </span>
-                    <span className="text-xs lg:text-sm text-white/50">{reason.statLabel}</span>
+                    <span className="text-xs lg:text-sm text-white/50">
+                      {reason.statLabel}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -139,7 +157,10 @@ export const LandingWhyChooseUs = () => {
                 >
                   {stat.value}
                 </p>
-                <p className="text-xs lg:text-sm text-white/60" style={{ fontFamily: "Roboto" }}>
+                <p
+                  className="text-xs lg:text-sm text-white/60"
+                  style={{ fontFamily: "Roboto" }}
+                >
                   {stat.label}
                 </p>
               </motion.div>
@@ -157,8 +178,8 @@ export const LandingWhyChooseUs = () => {
         >
           <button
             onClick={() => {
-              const element = document.querySelector("#book-demo")
-              if (element) element.scrollIntoView({ behavior: "smooth" })
+              const element = document.querySelector("#book-demo");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
             }}
             className="inline-flex items-center gap-2 bg-[#4CAF50] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full text-base lg:text-lg font-semibold hover:bg-[#4CAF50]/90 transition-all duration-200 shadow-lg hover:shadow-xl"
             style={{ fontFamily: "Inter" }}
@@ -169,5 +190,5 @@ export const LandingWhyChooseUs = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};

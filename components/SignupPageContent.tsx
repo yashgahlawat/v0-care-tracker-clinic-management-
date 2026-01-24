@@ -1,12 +1,23 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Eye, EyeOff, Mail, Lock, User, Building2, Briefcase, ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
-import CareTrackerLogo from "./brand/CareTrackerLogo"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  Eye,
+  EyeOff,
+  Lock,
+  Mail,
+  Sparkles,
+  User,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+import CareTrackerLogo from "./brand/CareTrackerLogo";
 
 const planFeatures = [
   "14-day free trial, no credit card required",
@@ -14,11 +25,11 @@ const planFeatures = [
   "Unlimited patients during trial",
   "Free onboarding assistance",
   "Cancel anytime",
-]
+];
 
 export function SignupPageContent() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -26,23 +37,25 @@ export function SignupPageContent() {
     organizationName: "",
     role: "",
     agreeToTerms: false,
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target
-    const checked = (e.target as HTMLInputElement).checked
-    setFormData((prev) => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    setFormData(prev => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsLoading(false)
-  }
+    e.preventDefault();
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    setIsLoading(false);
+  };
 
   return (
     <div className="min-h-screen bg-background flex">
@@ -59,14 +72,21 @@ export function SignupPageContent() {
           </div>
 
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Create your account</h2>
-            <p className="text-muted-foreground">Start your 14-day free trial today</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Create your account
+            </h2>
+            <p className="text-muted-foreground">
+              Start your 14-day free trial today
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Full Name */}
             <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Full name
               </label>
               <div className="relative">
@@ -86,7 +106,10 @@ export function SignupPageContent() {
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Work email
               </label>
               <div className="relative">
@@ -106,7 +129,10 @@ export function SignupPageContent() {
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Create password
               </label>
               <div className="relative">
@@ -128,14 +154,21 @@ export function SignupPageContent() {
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Organization Name */}
             <div>
-              <label htmlFor="organizationName" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="organizationName"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Organization name
               </label>
               <div className="relative">
@@ -155,7 +188,10 @@ export function SignupPageContent() {
 
             {/* Role */}
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Your role
               </label>
               <div className="relative">
@@ -175,15 +211,27 @@ export function SignupPageContent() {
                   <option value="practice-manager">Practice Manager</option>
                   <option value="physician">Physician / Doctor</option>
                   <option value="nurse">Nurse</option>
-                  <option value="receptionist">Receptionist / Front Desk</option>
+                  <option value="receptionist">
+                    Receptionist / Front Desk
+                  </option>
                   <option value="administrator">Administrator</option>
                   <option value="billing-specialist">Billing Specialist</option>
                   <option value="it-manager">IT Manager</option>
                   <option value="other">Other</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="w-4 h-4 text-muted-foreground"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -200,20 +248,30 @@ export function SignupPageContent() {
                 required
                 className="mt-1 w-4 h-4 rounded border-border text-[#1d326d] focus:ring-[#1d326d]"
               />
-              <label htmlFor="agreeToTerms" className="text-sm text-muted-foreground">
+              <label
+                htmlFor="agreeToTerms"
+                className="text-sm text-muted-foreground"
+              >
                 I agree to CareTracker&apos;s{" "}
                 <Link href="/terms" className="text-[#1d326d] hover:underline">
                   Terms of Service
                 </Link>{" "}
                 and{" "}
-                <Link href="/privacy" className="text-[#1d326d] hover:underline">
+                <Link
+                  href="/privacy"
+                  className="text-[#1d326d] hover:underline"
+                >
                   Privacy Policy
                 </Link>
               </label>
             </div>
 
             {/* Submit Button */}
-            <button type="submit" disabled={isLoading} className="w-full btn-primary rounded-xl disabled:opacity-70">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full btn-primary rounded-xl disabled:opacity-70"
+            >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
@@ -232,7 +290,9 @@ export function SignupPageContent() {
                 <div className="w-full border-t border-border" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-background text-muted-foreground">Or sign up with</span>
+                <span className="px-4 bg-background text-muted-foreground">
+                  Or sign up with
+                </span>
               </div>
             </div>
 
@@ -265,7 +325,11 @@ export function SignupPageContent() {
                 type="button"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
                 </svg>
                 Apple
@@ -275,7 +339,10 @@ export function SignupPageContent() {
 
           <p className="mt-8 text-center text-muted-foreground">
             Already have an account?{" "}
-            <Link href="/login" className="text-[#1d326d] font-medium hover:text-[#1d326d]/80 transition-colors">
+            <Link
+              href="/login"
+              className="text-[#1d326d] font-medium hover:text-[#1d326d]/80 transition-colors"
+            >
               Log in
             </Link>
           </p>
@@ -301,7 +368,8 @@ export function SignupPageContent() {
                 The complete platform for modern clinics
               </h1>
               <p className="text-white/80 text-lg max-w-md">
-                Join 500+ Australian healthcare practices that trust CareTracker to streamline their operations.
+                Join 500+ Australian healthcare practices that trust CareTracker
+                to streamline their operations.
               </p>
             </motion.div>
 
@@ -312,7 +380,10 @@ export function SignupPageContent() {
               className="space-y-4"
             >
               {planFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3 text-white/90">
+                <div
+                  key={index}
+                  className="flex items-center gap-3 text-white/90"
+                >
                   <CheckCircle2 className="w-5 h-5 text-[#fcc41d] flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
@@ -331,11 +402,13 @@ export function SignupPageContent() {
                 </div>
                 <div>
                   <p className="text-white/90 italic mb-3">
-                    &ldquo;CareTracker transformed how we manage our practice. Setup took less than a day and our staff
-                    loves it.&rdquo;
+                    &ldquo;CareTracker transformed how we manage our practice.
+                    Setup took less than a day and our staff loves it.&rdquo;
                   </p>
                   <p className="text-white font-medium">Dr. James Wilson</p>
-                  <p className="text-white/60 text-sm">Medical Director, Sydney Family Practice</p>
+                  <p className="text-white/60 text-sm">
+                    Medical Director, Sydney Family Practice
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -351,5 +424,5 @@ export function SignupPageContent() {
         </div>
       </div>
     </div>
-  )
+  );
 }

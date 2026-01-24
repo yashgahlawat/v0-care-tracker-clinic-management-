@@ -7,5 +7,5 @@ export function GlassLineDivider() {
         </div>
       </div>
     </section>
-  )
+  );
 }

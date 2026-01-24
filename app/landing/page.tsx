@@ -1,9 +1,9 @@
-import { LandingHero } from "@/components/landing/LandingHero"
-import { LandingFeatures } from "@/components/landing/LandingFeatures"
-import { LandingWhyChooseUs } from "@/components/landing/LandingWhyChooseUs"
-import { LandingIntegrations } from "@/components/landing/LandingIntegrations"
-import { LandingTestimonials } from "@/components/landing/LandingTestimonials"
-import { LandingCTA } from "@/components/landing/LandingCTA"
+import { LandingCTA } from "@/components/landing/LandingCTA";
+import { LandingFeatures } from "@/components/landing/LandingFeatures";
+import { LandingHero } from "@/components/landing/LandingHero";
+import { LandingIntegrations } from "@/components/landing/LandingIntegrations";
+import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
+import { LandingWhyChooseUs } from "@/components/landing/LandingWhyChooseUs";
 
 export default function LandingPage() {
   return (
@@ -15,5 +15,5 @@ export default function LandingPage() {
       <LandingTestimonials />
       <LandingCTA />
     </main>
-  )
+  );
 }

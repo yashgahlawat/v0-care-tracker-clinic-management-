@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { CheckIcon } from "@radix-ui/react-icons"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { CheckIcon } from "@radix-ui/react-icons";
+import * as React from "react";
 
-type PlanLevel = "starter" | "professional" | "enterprise"
+type PlanLevel = "starter" | "professional" | "enterprise";
 
 interface PricingFeature {
-  name: string
-  included: PlanLevel | "all"
+  name: string;
+  included: PlanLevel | "all";
 }
 
 interface PricingPlan {
-  name: string
-  level: PlanLevel
+  name: string;
+  level: PlanLevel;
   price: {
-    monthly: number
-    yearly: number
-  }
-  popular?: boolean
+    monthly: number;
+    yearly: number;
+  };
+  popular?: boolean;
 }
 
 const features: PricingFeature[] = [
@@ -36,7 +36,7 @@ const features: PricingFeature[] = [
   { name: "24/7 phone support + SLA", included: "enterprise" },
   { name: "HIPAA-compliant infrastructure", included: "all" },
   { name: "Automated appointment reminders", included: "all" },
-]
+];
 
 const plans: PricingPlan[] = [
   {
@@ -55,29 +55,39 @@ const plans: PricingPlan[] = [
     price: { monthly: 799, yearly: 7990 },
     level: "enterprise",
   },
-]
+];
 
-function shouldShowCheck(included: PricingFeature["included"], level: PlanLevel): boolean {
-  if (included === "all") return true
-  if (included === "enterprise" && level === "enterprise") return true
-  if (included === "professional" && (level === "professional" || level === "enterprise")) return true
-  if (included === "starter") return true
-  return false
+function shouldShowCheck(
+  included: PricingFeature["included"],
+  level: PlanLevel,
+): boolean {
+  if (included === "all") return true;
+  if (included === "enterprise" && level === "enterprise") return true;
+  if (
+    included === "professional" &&
+    (level === "professional" || level === "enterprise")
+  )
+    return true;
+  if (included === "starter") return true;
+  return false;
 }
 
 export function PricingSection() {
-  const [isYearly, setIsYearly] = React.useState(false)
-  const [selectedPlan, setSelectedPlan] = React.useState<PlanLevel>("professional")
+  const [isYearly, setIsYearly] = React.useState(false);
+  const [selectedPlan, setSelectedPlan] =
+    React.useState<PlanLevel>("professional");
 
   return (
     <section className="py-24 bg-background" id="pricing">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-figtree text-[40px] font-normal leading-tight mb-4">Simple, transparent pricing</h2>
+          <h2 className="font-figtree text-[40px] font-normal leading-tight mb-4">
+            Simple, transparent pricing
+          </h2>
           <p className="font-figtree text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose the plan that fits your practice. All plans include HIPAA-compliant infrastructure and automated
-            reminders.
+            Choose the plan that fits your practice. All plans include
+            HIPAA-compliant infrastructure and automated reminders.
           </p>
         </div>
 
@@ -89,7 +99,9 @@ export function PricingSection() {
               onClick={() => setIsYearly(false)}
               className={cn(
                 "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                !isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                !isYearly
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
               )}
             >
               Monthly
@@ -99,7 +111,9 @@ export function PricingSection() {
               onClick={() => setIsYearly(true)}
               className={cn(
                 "px-6 py-2 rounded-full font-figtree text-lg transition-all",
-                isYearly ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                isYearly
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
               )}
             >
               Yearly
@@ -110,7 +124,7 @@ export function PricingSection() {
 
         {/* Plan Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {plans.map((plan) => (
+          {plans.map(plan => (
             <button
               key={plan.name}
               type="button"
@@ -128,18 +142,24 @@ export function PricingSection() {
                 </span>
               )}
               <div className="mb-6">
-                <h3 className="font-figtree text-2xl font-medium mb-2">{plan.name}</h3>
+                <h3 className="font-figtree text-2xl font-medium mb-2">
+                  {plan.name}
+                </h3>
                 <div className="flex items-baseline gap-1">
                   <span className="font-figtree text-4xl font-medium">
                     ${isYearly ? plan.price.yearly : plan.price.monthly}
                   </span>
-                  <span className="font-figtree text-lg text-muted-foreground">/{isYearly ? "year" : "month"}</span>
+                  <span className="font-figtree text-lg text-muted-foreground">
+                    /{isYearly ? "year" : "month"}
+                  </span>
                 </div>
               </div>
               <div
                 className={cn(
                   "w-full py-3 px-6 rounded-full font-figtree text-lg transition-all text-center",
-                  selectedPlan === plan.level ? "bg-[#1d326d] text-white" : "bg-secondary text-foreground",
+                  selectedPlan === plan.level
+                    ? "bg-[#1d326d] text-white"
+                    : "bg-secondary text-foreground",
                 )}
               >
                 {selectedPlan === plan.level ? "Selected" : "Select Plan"}
@@ -158,8 +178,11 @@ export function PricingSection() {
                   <h3 className="font-figtree text-xl font-medium">Features</h3>
                 </div>
                 <div className="flex items-center gap-8">
-                  {plans.map((plan) => (
-                    <div key={plan.level} className="w-24 text-center font-figtree text-lg font-medium">
+                  {plans.map(plan => (
+                    <div
+                      key={plan.level}
+                      className="w-24 text-center font-figtree text-lg font-medium"
+                    >
                       {plan.name}
                     </div>
                   ))}
@@ -180,8 +203,11 @@ export function PricingSection() {
                     <span className="font-figtree text-lg">{feature.name}</span>
                   </div>
                   <div className="flex items-center gap-8">
-                    {plans.map((plan) => (
-                      <div key={plan.level} className="w-24 flex justify-center">
+                    {plans.map(plan => (
+                      <div
+                        key={plan.level}
+                        className="w-24 flex justify-center"
+                      >
                         {shouldShowCheck(feature.included, plan.level) ? (
                           <div className="w-6 h-6 rounded-full bg-[#1d326d] flex items-center justify-center">
                             <CheckIcon className="w-4 h-4 text-white" />
@@ -201,10 +227,11 @@ export function PricingSection() {
         {/* CTA Button */}
         <div className="mt-12 text-center">
           <button className="bg-[#1d326d] text-white px-[18px] py-[15px] rounded-full font-figtree text-lg hover:rounded-2xl transition-all">
-            Start 14-day free trial with {plans.find((p) => p.level === selectedPlan)?.name}
+            Start 14-day free trial with{" "}
+            {plans.find(p => p.level === selectedPlan)?.name}
           </button>
         </div>
       </div>
     </section>
-  )
+  );
 }

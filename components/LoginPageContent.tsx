@@ -1,25 +1,33 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Eye, EyeOff, Mail, Lock, ArrowRight, Shield, CheckCircle2 } from "lucide-react"
-import CareTrackerLogo from "./brand/CareTrackerLogo"
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Eye,
+  EyeOff,
+  Lock,
+  Mail,
+  Shield,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+import CareTrackerLogo from "./brand/CareTrackerLogo";
 
 export function LoginPageContent() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsLoading(false)
-  }
+    e.preventDefault();
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    setIsLoading(false);
+  };
 
   return (
     <div className="min-h-screen bg-background flex">
@@ -41,7 +49,8 @@ export function LoginPageContent() {
                 Welcome back to your clinic dashboard
               </h1>
               <p className="text-white/80 text-lg max-w-md">
-                Access your appointments, patient records, and practice analytics all in one place.
+                Access your appointments, patient records, and practice
+                analytics all in one place.
               </p>
             </motion.div>
 
@@ -51,14 +60,19 @@ export function LoginPageContent() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-4"
             >
-              {["Secure, HIPAA-compliant access", "Real-time practice insights", "Multi-location support"].map(
-                (feature, index) => (
-                  <div key={index} className="flex items-center gap-3 text-white/90">
-                    <CheckCircle2 className="w-5 h-5 text-[#fcc41d]" />
-                    <span>{feature}</span>
-                  </div>
-                ),
-              )}
+              {[
+                "Secure, HIPAA-compliant access",
+                "Real-time practice insights",
+                "Multi-location support",
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 text-white/90"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-[#fcc41d]" />
+                  <span>{feature}</span>
+                </div>
+              ))}
             </motion.div>
           </div>
 
@@ -83,13 +97,20 @@ export function LoginPageContent() {
           </div>
 
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Log in to your account</h2>
-            <p className="text-muted-foreground">Enter your credentials to access your dashboard</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+              Log in to your account
+            </h2>
+            <p className="text-muted-foreground">
+              Enter your credentials to access your dashboard
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-foreground mb-2"
+              >
                 Email address
               </label>
               <div className="relative">
@@ -98,7 +119,7 @@ export function LoginPageContent() {
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   placeholder="you@clinic.com.au"
                   required
                   className="input-brand pl-12"
@@ -108,7 +129,10 @@ export function LoginPageContent() {
 
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label htmlFor="password" className="block text-sm font-medium text-foreground">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-foreground"
+                >
                   Password
                 </label>
                 <Link
@@ -124,7 +148,7 @@ export function LoginPageContent() {
                   id="password"
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={e => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
                   className="input-brand pl-12 pr-12"
@@ -135,7 +159,11 @@ export function LoginPageContent() {
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
             </div>
@@ -146,12 +174,19 @@ export function LoginPageContent() {
                 type="checkbox"
                 className="w-4 h-4 rounded border-border text-[#1d326d] focus:ring-[#1d326d]"
               />
-              <label htmlFor="remember" className="text-sm text-muted-foreground">
+              <label
+                htmlFor="remember"
+                className="text-sm text-muted-foreground"
+              >
                 Remember me for 30 days
               </label>
             </div>
 
-            <button type="submit" disabled={isLoading} className="w-full btn-primary rounded-xl disabled:opacity-70">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full btn-primary rounded-xl disabled:opacity-70"
+            >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
@@ -169,7 +204,9 @@ export function LoginPageContent() {
                 <div className="w-full border-t border-border" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-background text-muted-foreground">Or continue with</span>
+                <span className="px-4 bg-background text-muted-foreground">
+                  Or continue with
+                </span>
               </div>
             </div>
 
@@ -202,7 +239,11 @@ export function LoginPageContent() {
                 type="button"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
                 </svg>
                 Apple
@@ -212,12 +253,15 @@ export function LoginPageContent() {
 
           <p className="mt-8 text-center text-muted-foreground">
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="text-[#1d326d] font-medium hover:text-[#1d326d]/80 transition-colors">
+            <Link
+              href="/signup"
+              className="text-[#1d326d] font-medium hover:text-[#1d326d]/80 transition-colors"
+            >
               Start free trial
             </Link>
           </p>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

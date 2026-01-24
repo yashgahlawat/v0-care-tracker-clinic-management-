@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Calendar, Users, DollarSign, TrendingUp, ArrowUpRight, ArrowDownRight } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Calendar,
+  DollarSign,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 
 const stats = [
   {
@@ -40,7 +47,7 @@ const stats = [
     color: "#8b5cf6",
     bgColor: "bg-violet-100",
   },
-]
+];
 
 export const StatsCards = () => {
   return (
@@ -62,14 +69,20 @@ export const StatsCards = () => {
                 stat.trend === "up" ? "text-emerald-600" : "text-red-500"
               }`}
             >
-              {stat.trend === "up" ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
+              {stat.trend === "up" ? (
+                <ArrowUpRight size={16} />
+              ) : (
+                <ArrowDownRight size={16} />
+              )}
               {stat.change}
             </div>
           </div>
           <p className="text-sm text-gray-500 mb-1">{stat.title}</p>
-          <p className="text-2xl lg:text-3xl font-bold text-gray-900">{stat.value}</p>
+          <p className="text-2xl lg:text-3xl font-bold text-gray-900">
+            {stat.value}
+          </p>
         </motion.div>
       ))}
     </div>
-  )
-}
+  );
+};

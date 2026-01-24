@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface CareTrackerLogoProps {
-  size?: "sm" | "md" | "lg" | "xl"
-  showText?: boolean
-  variant?: "default" | "white" | "dark"
-  className?: string
-  href?: string
+  size?: "sm" | "md" | "lg" | "xl";
+  showText?: boolean;
+  variant?: "default" | "white" | "dark";
+  className?: string;
+  href?: string;
 }
 
-export { CareTrackerLogo }
+export { CareTrackerLogo };
 
 export default function CareTrackerLogo({
   size = "md",
@@ -25,7 +25,7 @@ export default function CareTrackerLogo({
     md: { icon: 36, text: "text-xl" },
     lg: { icon: 48, text: "text-2xl" },
     xl: { icon: 64, text: "text-3xl" },
-  }
+  };
 
   const colors = {
     default: {
@@ -43,10 +43,10 @@ export default function CareTrackerLogo({
       secondary: "#334155",
       text: "text-[#0F172A]",
     },
-  }
+  };
 
-  const { icon, text } = sizes[size]
-  const { primary, secondary, text: textColor } = colors[variant]
+  const { icon, text } = sizes[size];
+  const { primary, secondary, text: textColor } = colors[variant];
 
   const LogoContent = (
     <motion.div
@@ -65,11 +65,23 @@ export default function CareTrackerLogo({
       >
         {/* Outer Circle with gradient */}
         <defs>
-          <linearGradient id={`logoGradient-${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id={`logoGradient-${variant}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor={primary} />
             <stop offset="100%" stopColor={secondary} />
           </linearGradient>
-          <linearGradient id={`heartGradient-${variant}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id={`heartGradient-${variant}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor={primary} />
             <stop offset="50%" stopColor={secondary} />
             <stop offset="100%" stopColor={primary} />
@@ -77,8 +89,21 @@ export default function CareTrackerLogo({
         </defs>
 
         {/* Background Circle */}
-        <circle cx="24" cy="24" r="22" fill={`url(#logoGradient-${variant})`} opacity="0.1" />
-        <circle cx="24" cy="24" r="22" stroke={`url(#logoGradient-${variant})`} strokeWidth="2" fill="none" />
+        <circle
+          cx="24"
+          cy="24"
+          r="22"
+          fill={`url(#logoGradient-${variant})`}
+          opacity="0.1"
+        />
+        <circle
+          cx="24"
+          cy="24"
+          r="22"
+          stroke={`url(#logoGradient-${variant})`}
+          strokeWidth="2"
+          fill="none"
+        />
 
         {/* Heart Shape with Pulse */}
         <path
@@ -108,16 +133,18 @@ export default function CareTrackerLogo({
             Care<span style={{ color: primary }}>Tracker</span>
           </span>
           {size !== "sm" && (
-            <span className="text-[10px] tracking-widest uppercase opacity-60 mt-0.5">Clinic Management</span>
+            <span className="text-[10px] tracking-widest uppercase opacity-60 mt-0.5">
+              Clinic Management
+            </span>
           )}
         </div>
       )}
     </motion.div>
-  )
+  );
 
   if (href) {
-    return <Link href={href}>{LogoContent}</Link>
+    return <Link href={href}>{LogoContent}</Link>;
   }
 
-  return LogoContent
+  return LogoContent;
 }

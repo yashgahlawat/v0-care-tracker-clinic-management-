@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
-  LayoutGrid,
+  BarChart3,
+  Bell,
+  Building2,
   CalendarCheck,
   ClipboardList,
-  Building2,
-  Receipt,
-  ShieldCheck,
-  Plug,
-  BarChart3,
-  Sparkles,
-  Bell,
+  LayoutGrid,
   Network,
-  Workflow,
   Palette,
-  Settings,
+  Plug,
+  Receipt,
   Scale,
-} from "lucide-react"
+  Settings,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
+import Link from "next/link";
+import type React from "react";
 
 type Feature = {
-  icon: React.ReactNode
-  title: string
-  description: string
-}
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
 
 const features: Feature[] = [
   {
@@ -85,7 +85,8 @@ const features: Feature[] = [
   {
     icon: <Bell className="w-6 h-6" />,
     title: "Communication & Notifications",
-    description: "SMS/email reminders, in-app messaging, broadcast communications, and automated follow-up sequences.",
+    description:
+      "SMS/email reminders, in-app messaging, broadcast communications, and automated follow-up sequences.",
   },
   {
     icon: <Network className="w-6 h-6" />,
@@ -96,7 +97,8 @@ const features: Feature[] = [
   {
     icon: <Workflow className="w-6 h-6" />,
     title: "Workflows & Automation",
-    description: "Custom workflow builders, trigger-based actions, automated task assignments, and approval processes.",
+    description:
+      "Custom workflow builders, trigger-based actions, automated task assignments, and approval processes.",
   },
   {
     icon: <Palette className="w-6 h-6" />,
@@ -116,7 +118,7 @@ const features: Feature[] = [
     description:
       "Privacy Act compliance, AHPRA requirements, Medicare regulations, and Australian healthcare standards adherence.",
   },
-]
+];
 
 export const FeaturesSection = () => {
   return (
@@ -139,8 +141,8 @@ export const FeaturesSection = () => {
             className="text-base lg:text-lg leading-6 lg:leading-7 text-slate-600 max-w-2xl mx-auto px-4 sm:px-0"
             style={{ fontFamily: "var(--font-roboto), Roboto" }}
           >
-            A comprehensive platform built for Australian healthcare practices—from solo practitioners to multi-clinic
-            networks.
+            A comprehensive platform built for Australian healthcare
+            practices—from solo practitioners to multi-clinic networks.
           </p>
         </motion.div>
 
@@ -151,7 +153,11 @@ export const FeaturesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.05,
+                ease: "easeOut",
+              }}
               className="bg-white rounded-xl lg:rounded-2xl p-5 lg:p-6 shadow-sm border border-[#1d326d]/20 hover:shadow-md hover:border-[#1d326d] transition-all duration-200"
             >
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#fcc41d]/10 rounded-lg lg:rounded-xl flex items-center justify-center text-[#1d326d] mb-3 lg:mb-4">
@@ -190,5 +196,5 @@ export const FeaturesSection = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};

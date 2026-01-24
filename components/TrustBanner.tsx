@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function TrustBanner() {
   return (
@@ -7,7 +7,8 @@ export function TrustBanner() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-700 text-lg font-medium text-center md:text-left">
-            Trusted by leading medical practices in Sydney, Melbourne, and Brisbane
+            Trusted by leading medical practices in Sydney, Melbourne, and
+            Brisbane
           </p>
           <Link
             href="/book-demo"
@@ -19,5 +20,5 @@ export function TrustBanner() {
         </div>
       </div>
     </section>
-  )
+  );
 }

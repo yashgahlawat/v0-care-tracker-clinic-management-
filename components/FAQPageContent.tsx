@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Search } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, Search } from "lucide-react";
+import { useState } from "react";
 
 const faqCategories = [
   {
@@ -40,7 +40,8 @@ const faqCategories = [
       },
       {
         question: "Do you offer discounts for annual billing?",
-        answer: "Yes, we offer a 17% discount when you choose annual billing. This applies to all plan tiers.",
+        answer:
+          "Yes, we offer a 17% discount when you choose annual billing. This applies to all plan tiers.",
       },
     ],
   },
@@ -104,40 +105,49 @@ const faqCategories = [
       },
     ],
   },
-]
+];
 
 export function FAQPageContent() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [openItems, setOpenItems] = useState<string[]>([])
+  const [searchQuery, setSearchQuery] = useState("");
+  const [openItems, setOpenItems] = useState<string[]>([]);
 
   const toggleItem = (id: string) => {
-    setOpenItems((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]))
-  }
+    setOpenItems(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id],
+    );
+  };
 
   const filteredCategories = faqCategories
-    .map((category) => ({
+    .map(category => ({
       ...category,
       faqs: category.faqs.filter(
-        (faq) =>
+        faq =>
           faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
           faq.answer.toLowerCase().includes(searchQuery.toLowerCase()),
       ),
     }))
-    .filter((category) => category.faqs.length > 0)
+    .filter(category => category.faqs.length > 0);
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-12 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0A8FDC]/5 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h1
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#202020] mb-6"
               style={{ fontFamily: "Inter" }}
             >
               Frequently Asked Questions
             </h1>
-            <p className="text-lg sm:text-xl text-[#666666] mb-8" style={{ fontFamily: "Roboto" }}>
+            <p
+              className="text-lg sm:text-xl text-[#666666] mb-8"
+              style={{ fontFamily: "Roboto" }}
+            >
               Find answers to common questions about CareTracker
             </p>
 
@@ -148,7 +158,7 @@ export function FAQPageContent() {
                 type="text"
                 placeholder="Search questions..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={e => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0A8FDC]/20 focus:border-[#0A8FDC]"
                 style={{ fontFamily: "Roboto" }}
               />
@@ -169,21 +179,30 @@ export function FAQPageContent() {
               transition={{ duration: 0.5, delay: catIndex * 0.1 }}
               className="mb-12"
             >
-              <h2 className="text-2xl font-bold text-[#202020] mb-6" style={{ fontFamily: "Inter" }}>
+              <h2
+                className="text-2xl font-bold text-[#202020] mb-6"
+                style={{ fontFamily: "Inter" }}
+              >
                 {category.name}
               </h2>
               <div className="space-y-4">
                 {category.faqs.map((faq, faqIndex) => {
-                  const itemId = `${catIndex}-${faqIndex}`
-                  const isOpen = openItems.includes(itemId)
+                  const itemId = `${catIndex}-${faqIndex}`;
+                  const isOpen = openItems.includes(itemId);
 
                   return (
-                    <div key={itemId} className="border border-gray-200 rounded-xl overflow-hidden">
+                    <div
+                      key={itemId}
+                      className="border border-gray-200 rounded-xl overflow-hidden"
+                    >
                       <button
                         onClick={() => toggleItem(itemId)}
                         className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                       >
-                        <span className="text-lg font-medium text-[#202020]" style={{ fontFamily: "Inter" }}>
+                        <span
+                          className="text-lg font-medium text-[#202020]"
+                          style={{ fontFamily: "Inter" }}
+                        >
                           {faq.question}
                         </span>
                         <ChevronDown
@@ -198,14 +217,17 @@ export function FAQPageContent() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <p className="px-6 pb-6 text-[#666666]" style={{ fontFamily: "Roboto" }}>
+                            <p
+                              className="px-6 pb-6 text-[#666666]"
+                              style={{ fontFamily: "Roboto" }}
+                            >
                               {faq.answer}
                             </p>
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </motion.div>
@@ -213,7 +235,10 @@ export function FAQPageContent() {
 
           {filteredCategories.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#666666] text-lg" style={{ fontFamily: "Roboto" }}>
+              <p
+                className="text-[#666666] text-lg"
+                style={{ fontFamily: "Roboto" }}
+              >
                 No questions found matching "{searchQuery}"
               </p>
             </div>
@@ -224,11 +249,15 @@ export function FAQPageContent() {
       {/* Contact CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#202020] mb-4" style={{ fontFamily: "Inter" }}>
+          <h2
+            className="text-2xl font-bold text-[#202020] mb-4"
+            style={{ fontFamily: "Inter" }}
+          >
             Still have questions?
           </h2>
           <p className="text-[#666666] mb-8" style={{ fontFamily: "Roboto" }}>
-            Our team is here to help. Reach out and we'll get back to you within 24 hours.
+            Our team is here to help. Reach out and we'll get back to you within
+            24 hours.
           </p>
           <a
             href="/contact"
@@ -240,5 +269,5 @@ export function FAQPageContent() {
         </div>
       </section>
     </main>
-  )
+  );
 }

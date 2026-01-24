@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { usePathname } from "next/navigation"
-import { useEffect } from "react"
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export function ScrollToTop() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   useEffect(() => {
     // Scroll to top when pathname changes
@@ -12,8 +12,8 @@ export function ScrollToTop() {
       top: 0,
       left: 0,
       behavior: "instant",
-    })
-  }, [pathname])
+    });
+  }, [pathname]);
 
-  return null
+  return null;
 }

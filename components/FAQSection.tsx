@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Plus } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion";
+import { Plus } from "lucide-react";
+import { useState } from "react";
 type FAQItem = {
-  question: string
-  answer: string
-}
+  question: string;
+  answer: string;
+};
 type FAQSectionProps = {
-  title?: string
-  faqs?: FAQItem[]
-}
+  title?: string;
+  faqs?: FAQItem[];
+};
 
 const defaultFAQs: FAQItem[] = [
   {
@@ -38,12 +38,15 @@ const defaultFAQs: FAQItem[] = [
     answer:
       "Most practices are up and running within 1-2 weeks. This includes data migration, staff training, and workflow configuration. For larger multi-location practices with complex EHR integrations, implementation typically takes 4-6 weeks. Our team manages the entire process to minimize disruption to your practice.",
   },
-]
-export const FAQSection = ({ title = "Frequently asked questions", faqs = defaultFAQs }: FAQSectionProps) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+];
+export const FAQSection = ({
+  title = "Frequently asked questions",
+  faqs = defaultFAQs,
+}: FAQSectionProps) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
   return (
     <section className="w-full py-16 px-8 bg-slate-50">
       <div className="max-w-7xl mx-auto">
@@ -66,7 +69,10 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
           <div className="lg:col-span-8">
             <div className="space-y-0">
               {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-[#e5e5e5] last:border-b-0">
+                <div
+                  key={index}
+                  className="border-b border-[#e5e5e5] last:border-b-0"
+                >
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex items-center justify-between py-6 text-left group hover:opacity-70 transition-opacity duration-150"
@@ -91,7 +97,10 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
                       }}
                       className="flex-shrink-0"
                     >
-                      <Plus className="w-6 h-6 text-[#202020]" strokeWidth={1.5} />
+                      <Plus
+                        className="w-6 h-6 text-[#202020]"
+                        strokeWidth={1.5}
+                      />
                     </motion.div>
                   </button>
 
@@ -136,5 +145,5 @@ export const FAQSection = ({ title = "Frequently asked questions", faqs = defaul
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

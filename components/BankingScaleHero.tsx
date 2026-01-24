@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type StatItem = {
-  value: string
-  description: string
-  delay: number
-}
+  value: string;
+  description: string;
+  delay: number;
+};
 type DataPoint = {
-  id: number
-  left: number
-  top: number
-  height: number
-  direction: "up" | "down"
-  delay: number
-}
+  id: number;
+  left: number;
+  top: number;
+  height: number;
+  direction: "up" | "down";
+  delay: number;
+};
 
 const stats: StatItem[] = [
   {
@@ -40,15 +40,18 @@ const stats: StatItem[] = [
     description: "Fully compliant\ninfrastructure",
     delay: 0.6,
   },
-]
+];
 const generateDataPoints = (): DataPoint[] => {
-  const points: DataPoint[] = []
-  const baseLeft = 1
-  const spacing = 32
+  const points: DataPoint[] = [];
+  const baseLeft = 1;
+  const spacing = 32;
   for (let i = 0; i < 50; i++) {
-    const direction = i % 2 === 0 ? "down" : "up"
-    const height = Math.floor(Math.random() * 120) + 88
-    const top = direction === "down" ? Math.random() * 150 + 250 : Math.random() * 100 - 80
+    const direction = i % 2 === 0 ? "down" : "up";
+    const height = Math.floor(Math.random() * 120) + 88;
+    const top =
+      direction === "down"
+        ? Math.random() * 150 + 250
+        : Math.random() * 100 - 80;
     points.push({
       id: i,
       left: baseLeft + i * spacing,
@@ -56,21 +59,21 @@ const generateDataPoints = (): DataPoint[] => {
       height,
       direction,
       delay: i * 0.035,
-    })
+    });
   }
-  return points
-}
+  return points;
+};
 
 // @component: BankingScaleHero
 export const BankingScaleHero = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [dataPoints] = useState<DataPoint[]>(generateDataPoints())
-  const [typingComplete, setTypingComplete] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const [dataPoints] = useState<DataPoint[]>(generateDataPoints());
+  const [typingComplete, setTypingComplete] = useState(false);
   useEffect(() => {
-    setIsVisible(true)
-    const timer = setTimeout(() => setTypingComplete(true), 1000)
-    return () => clearTimeout(timer)
-  }, [])
+    setIsVisible(true);
+    const timer = setTimeout(() => setTypingComplete(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // @return
   return (
@@ -81,7 +84,8 @@ export const BankingScaleHero = () => {
             <div
               className="relative h-6 inline-flex items-center font-mono uppercase text-xs text-[#1d326d] mb-8 lg:mb-12 px-2"
               style={{
-                fontFamily: "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
+                fontFamily:
+                  "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
               }}
             >
               <div className="flex items-center gap-0.5 overflow-hidden">
@@ -141,8 +145,9 @@ export const BankingScaleHero = () => {
                 fontFamily: "var(--font-roboto), Roboto",
               }}
             >
-              The only clinic OS that automatically fills empty slots via WhatsApp, reduces admin time by 40%, and
-              ensures you get paid faster.
+              The only clinic OS that automatically fills empty slots via
+              WhatsApp, reduces admin time by 40%, and ensures you get paid
+              faster.
             </p>
 
             <Link href="/features">
@@ -159,7 +164,7 @@ export const BankingScaleHero = () => {
             <div className="relative w-full h-[416px]">
               <div className="absolute top-0 left-0 lg:left-[100px] w-full lg:w-[680px] h-[416px] pointer-events-none overflow-hidden">
                 <div className="relative w-full h-full">
-                  {dataPoints.map((point) => (
+                  {dataPoints.map(point => (
                     <motion.div
                       key={point.id}
                       initial={{
@@ -207,7 +212,10 @@ export const BankingScaleHero = () => {
                         }}
                         className="absolute -left-[1px] w-2 h-2 bg-[#1d326d] rounded-full"
                         style={{
-                          top: point.direction === "down" ? "0px" : `${point.height - 8}px`,
+                          top:
+                            point.direction === "down"
+                              ? "0px"
+                              : `${point.height - 8}px`,
                         }}
                       />
                     </motion.div>
@@ -247,7 +255,9 @@ export const BankingScaleHero = () => {
                       <span className="text-xl sm:text-2xl font-medium leading-tight tracking-tight text-[#1d326d]">
                         {stat.value}
                       </span>
-                      <p className="text-xs leading-tight text-[#7C7F88] m-0 whitespace-pre-line">{stat.description}</p>
+                      <p className="text-xs leading-tight text-[#7C7F88] m-0 whitespace-pre-line">
+                        {stat.description}
+                      </p>
                     </motion.div>
                   </div>
                 ))}
@@ -257,5 +267,5 @@ export const BankingScaleHero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

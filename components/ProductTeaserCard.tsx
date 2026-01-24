@@ -1,20 +1,26 @@
-"use client"
-import { motion } from "framer-motion"
-import { ArrowUpRight, Calendar, Users, ClipboardList, Shield } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import {
+  ArrowUpRight,
+  Calendar,
+  ClipboardList,
+  Shield,
+  Users,
+} from "lucide-react";
 
 type ProductTeaserCardProps = {
-  dailyVolume?: string
-  dailyVolumeLabel?: string
-  headline?: string
-  subheadline?: string
-  description?: string
-  videoSrc?: string
-  posterSrc?: string
-  primaryButtonText?: string
-  primaryButtonHref?: string
-  secondaryButtonText?: string
-  secondaryButtonHref?: string
-}
+  dailyVolume?: string;
+  dailyVolumeLabel?: string;
+  headline?: string;
+  subheadline?: string;
+  description?: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  primaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+};
 
 // @component: ProductTeaserCard
 export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
@@ -30,11 +36,14 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
     primaryButtonHref = "",
     secondaryButtonText = "Watch Demo",
     secondaryButtonHref = "",
-  } = props
+  } = props;
 
   // @return
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-24 bg-slate-50" id="home">
+    <section
+      className="w-full px-4 sm:px-6 lg:px-8 py-24 bg-slate-50"
+      id="home"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-4">
           {/* Left Column - Content */}
@@ -53,7 +62,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
           >
             <a
               href={primaryButtonHref}
-              onClick={(e) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
               className="flex flex-col gap-1 text-[#9a9a9a]"
             >
               <motion.span
@@ -72,7 +81,8 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 }}
                 className="text-xs sm:text-sm uppercase tracking-tight font-mono flex items-center gap-1"
                 style={{
-                  fontFamily: "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
+                  fontFamily:
+                    "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
                 }}
               >
                 {dailyVolumeLabel}
@@ -126,7 +136,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               <li>
                 <a
                   href={primaryButtonHref}
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="block cursor-pointer text-white bg-[#1d326d] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-[#162654]"
                 >
                   {primaryButtonText}
@@ -135,7 +145,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               <li>
                 <a
                   href={secondaryButtonHref}
-                  onClick={(e) => e.preventDefault()}
+                  onClick={e => e.preventDefault()}
                   className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
                 >
                   {secondaryButtonText}
@@ -168,22 +178,34 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 className="bg-white/95 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl"
               >
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <h3 className="font-semibold text-[#202020] text-sm sm:text-base">Today&apos;s Schedule</h3>
-                  <span className="text-xs sm:text-sm text-[#1d326d] font-medium">12 appointments</span>
+                  <h3 className="font-semibold text-[#202020] text-sm sm:text-base">
+                    Today&apos;s Schedule
+                  </h3>
+                  <span className="text-xs sm:text-sm text-[#1d326d] font-medium">
+                    12 appointments
+                  </span>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-[#1d326d]/5 rounded-lg">
                     <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#1d326d] flex-shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">9:00 AM - Sarah Johnson</p>
-                      <p className="text-[10px] sm:text-xs text-[#666]">Annual Checkup</p>
+                      <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">
+                        9:00 AM - Sarah Johnson
+                      </p>
+                      <p className="text-[10px] sm:text-xs text-[#666]">
+                        Annual Checkup
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-[#1d326d]/5 rounded-lg">
                     <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#1d326d] flex-shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">10:30 AM - Michael Chen</p>
-                      <p className="text-[10px] sm:text-xs text-[#666]">Follow-up Visit</p>
+                      <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">
+                        10:30 AM - Michael Chen
+                      </p>
+                      <p className="text-[10px] sm:text-xs text-[#666]">
+                        Follow-up Visit
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -198,7 +220,9 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
                 >
                   <Users className="w-4 h-4 sm:w-6 sm:h-6 text-[#1d326d] mx-auto mb-1 sm:mb-2" />
-                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">847</p>
+                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">
+                    847
+                  </p>
                   <p className="text-[10px] sm:text-xs text-[#666]">Patients</p>
                 </motion.div>
                 <motion.div
@@ -208,8 +232,12 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
                 >
                   <ClipboardList className="w-4 h-4 sm:w-6 sm:h-6 text-[#1d326d] mx-auto mb-1 sm:mb-2" />
-                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">156</p>
-                  <p className="text-[10px] sm:text-xs text-[#666]">This Week</p>
+                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">
+                    156
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-[#666]">
+                    This Week
+                  </p>
                 </motion.div>
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
@@ -218,8 +246,12 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
                 >
                   <Shield className="w-4 h-4 sm:w-6 sm:h-6 text-[#fcc41d] mx-auto mb-1 sm:mb-2" />
-                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">HIPAA</p>
-                  <p className="text-[10px] sm:text-xs text-[#666]">Compliant</p>
+                  <p className="text-lg sm:text-2xl font-bold text-[#202020]">
+                    HIPAA
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-[#666]">
+                    Compliant
+                  </p>
                 </motion.div>
               </div>
             </div>
@@ -227,5 +259,5 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

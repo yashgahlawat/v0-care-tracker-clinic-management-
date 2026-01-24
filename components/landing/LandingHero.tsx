@@ -1,17 +1,21 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowRight, Play, CheckCircle2 } from "lucide-react"
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 
-const highlights = ["HIPAA Compliant", "30-Day Free Trial", "No Credit Card Required"]
+const highlights = [
+  "HIPAA Compliant",
+  "30-Day Free Trial",
+  "No Credit Card Required",
+];
 
 export const LandingHero = () => {
   const handleScrollToDemo = () => {
-    const element = document.querySelector("#book-demo")
+    const element = document.querySelector("#book-demo");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-[#f8fafc] via-white to-[#f0f4ff]">
@@ -61,8 +65,9 @@ export const LandingHero = () => {
               className="text-lg md:text-xl text-[#555555] leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
               style={{ fontFamily: "Figtree" }}
             >
-              The all-in-one platform for modern healthcare practices. Manage appointments, patient records, billing,
-              and more — all in one secure, HIPAA-compliant solution.
+              The all-in-one platform for modern healthcare practices. Manage
+              appointments, patient records, billing, and more — all in one
+              secure, HIPAA-compliant solution.
             </p>
 
             {/* CTA Buttons */}
@@ -119,16 +124,25 @@ export const LandingHero = () => {
                 {/* Dashboard Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                    <h3
+                      className="text-lg font-semibold text-[#1d326d]"
+                      style={{ fontFamily: "Figtree" }}
+                    >
                       Today's Overview
                     </h3>
-                    <p className="text-sm text-[#666666]" style={{ fontFamily: "Figtree" }}>
+                    <p
+                      className="text-sm text-[#666666]"
+                      style={{ fontFamily: "Figtree" }}
+                    >
                       December 5, 2025
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 bg-[#22c55e] rounded-full" />
-                    <span className="text-sm text-[#666666]" style={{ fontFamily: "Figtree" }}>
+                    <span
+                      className="text-sm text-[#666666]"
+                      style={{ fontFamily: "Figtree" }}
+                    >
                       Live
                     </span>
                   </div>
@@ -148,26 +162,49 @@ export const LandingHero = () => {
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                       className="bg-[#f8fafc] rounded-xl p-4"
                     >
-                      <p className="text-2xl font-bold text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                      <p
+                        className="text-2xl font-bold text-[#1d326d]"
+                        style={{ fontFamily: "Figtree" }}
+                      >
                         {stat.value}
                       </p>
-                      <p className="text-xs text-[#666666]" style={{ fontFamily: "Figtree" }}>
+                      <p
+                        className="text-xs text-[#666666]"
+                        style={{ fontFamily: "Figtree" }}
+                      >
                         {stat.label}
                       </p>
-                      <span className="text-xs text-[#22c55e] font-medium">{stat.change}</span>
+                      <span className="text-xs text-[#22c55e] font-medium">
+                        {stat.change}
+                      </span>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* Mini Schedule */}
                 <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                  <h4
+                    className="text-sm font-semibold text-[#1d326d]"
+                    style={{ fontFamily: "Figtree" }}
+                  >
                     Upcoming Appointments
                   </h4>
                   {[
-                    { time: "9:00 AM", patient: "Sarah Johnson", type: "Check-up" },
-                    { time: "10:30 AM", patient: "Michael Chen", type: "Follow-up" },
-                    { time: "2:00 PM", patient: "Emily Davis", type: "Consultation" },
+                    {
+                      time: "9:00 AM",
+                      patient: "Sarah Johnson",
+                      type: "Check-up",
+                    },
+                    {
+                      time: "10:30 AM",
+                      patient: "Michael Chen",
+                      type: "Follow-up",
+                    },
+                    {
+                      time: "2:00 PM",
+                      patient: "Emily Davis",
+                      type: "Consultation",
+                    },
                   ].map((apt, index) => (
                     <motion.div
                       key={index}
@@ -180,17 +217,23 @@ export const LandingHero = () => {
                         <div className="w-10 h-10 rounded-full bg-[#1d326d]/10 flex items-center justify-center text-[#1d326d] font-semibold text-sm">
                           {apt.patient
                             .split(" ")
-                            .map((n) => n[0])
+                            .map(n => n[0])
                             .join("")}
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                          <p
+                            className="text-sm font-medium text-[#1d326d]"
+                            style={{ fontFamily: "Figtree" }}
+                          >
                             {apt.patient}
                           </p>
                           <p className="text-xs text-[#666666]">{apt.type}</p>
                         </div>
                       </div>
-                      <span className="text-sm font-medium text-[#1d326d]" style={{ fontFamily: "Figtree" }}>
+                      <span
+                        className="text-sm font-medium text-[#1d326d]"
+                        style={{ fontFamily: "Figtree" }}
+                      >
                         {apt.time}
                       </span>
                     </motion.div>
@@ -205,7 +248,10 @@ export const LandingHero = () => {
                 transition={{ duration: 0.4, delay: 0.8 }}
                 className="absolute -top-4 -right-4 bg-[#fcc41d] text-[#1d326d] px-4 py-2 rounded-full shadow-lg"
               >
-                <span className="text-sm font-semibold" style={{ fontFamily: "Figtree" }}>
+                <span
+                  className="text-sm font-semibold"
+                  style={{ fontFamily: "Figtree" }}
+                >
                   HIPAA Certified
                 </span>
               </motion.div>
@@ -221,7 +267,10 @@ export const LandingHero = () => {
                     <CheckCircle2 className="w-5 h-5 text-[#22c55e]" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold" style={{ fontFamily: "Figtree" }}>
+                    <p
+                      className="text-sm font-semibold"
+                      style={{ fontFamily: "Figtree" }}
+                    >
                       99.9% Uptime
                     </p>
                     <p className="text-xs text-[#666666]">Always reliable</p>
@@ -233,5 +282,5 @@ export const LandingHero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
