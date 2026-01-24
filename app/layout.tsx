@@ -1,4 +1,4 @@
-import ChatwootWidget from "@/components/ChatwootWidget";
+import { ChatwootLoader } from "@/components/ChatwootLoader";
 import { Footer } from "@/components/Footer";
 import { GlobalNavbar } from "@/components/GlobalNavbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -11,13 +11,15 @@ import "./globals.css";
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
-  weight: ["400", "500", "600"],
+  weight: ["400"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -61,7 +63,7 @@ export default function RootLayout({
         <ScrollToTop />
         <GlobalNavbar />
         <div className="pt-16 sm:pt-20">{children}</div>
-        <ChatwootWidget
+        <ChatwootLoader
           websiteToken={"mbCVNYgkFPAgo19fD2jBtoLE"}
           baseUrl={"https://app.chatwoot.com"}
           position="right"

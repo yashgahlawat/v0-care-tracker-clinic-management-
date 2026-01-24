@@ -44,8 +44,8 @@ const stats: StatItem[] = [
 const generateDataPoints = (): DataPoint[] => {
   const points: DataPoint[] = [];
   const baseLeft = 1;
-  const spacing = 32;
-  for (let i = 0; i < 50; i++) {
+  const spacing = 80;
+  for (let i = 0; i < 20; i++) {
     const direction = i % 2 === 0 ? "down" : "up";
     const height = Math.floor(Math.random() * 120) + 88;
     const top =
@@ -58,7 +58,7 @@ const generateDataPoints = (): DataPoint[] => {
       top,
       height,
       direction,
-      delay: i * 0.035,
+      delay: i * 0.05,
     });
   }
   return points;
