@@ -1,3 +1,4 @@
+import ChatwootWidget from "@/components/ChatwootWidget";
 import { Footer } from "@/components/Footer";
 import { GlobalNavbar } from "@/components/GlobalNavbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -23,7 +24,6 @@ export const metadata: Metadata = {
   title: "CareTracker - Intelligent Clinic Management Software",
   description:
     "Streamline your healthcare practice with CareTracker - the all-in-one clinic management platform for modern healthcare providers. HIPAA compliant, secure, and built for growth.",
-  generator: "v0.app",
   keywords: [
     "clinic management",
     "healthcare software",
@@ -57,11 +57,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figtree.variable} ${geistMono.variable} font-sans antialiased`}
-      >
+        className={`${figtree.variable} ${geistMono.variable} font-sans antialiased`}>
         <ScrollToTop />
         <GlobalNavbar />
         <div className="pt-16 sm:pt-20">{children}</div>
+        <ChatwootWidget
+          websiteToken={"mbCVNYgkFPAgo19fD2jBtoLE"}
+          baseUrl={"https://app.chatwoot.com"}
+          position="right"
+          locale="en"
+          type="expanded_bubble"
+          hideMessageBubble={false}
+        />
         <Footer />
         <Analytics />
       </body>

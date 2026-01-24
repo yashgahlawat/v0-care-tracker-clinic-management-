@@ -74,11 +74,10 @@ export const IntegrationBentoGrid = () => {
         {/* Headline */}
         <div className="text-center mb-12">
           <p
-            className="text-lg text-[#1d326d] font-medium"
+            className="text-lg text-primary font-medium"
             style={{
               fontFamily: "var(--font-figtree), Figtree",
-            }}
-          >
+            }}>
             Seamlessly integrated with 50+ tools you love
           </p>
         </div>
@@ -96,13 +95,11 @@ export const IntegrationBentoGrid = () => {
                 return (
                   <div
                     key={`set1-${index}`}
-                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-[#1d326d]"
-                  >
+                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
                     <LogoComponent />
                     <span
                       className="text-xs mt-2 font-medium"
-                      style={{ fontFamily: "var(--font-figtree), Figtree" }}
-                    >
+                      style={{ fontFamily: "var(--font-figtree), Figtree" }}>
                       {logo.name}
                     </span>
                   </div>
@@ -113,20 +110,17 @@ export const IntegrationBentoGrid = () => {
             {/* Second Set (Duplicate for seamless loop) */}
             <div
               className="flex gap-16 shrink-0 animate-marquee group-hover:pause"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               {logos.map((logo, index) => {
                 const LogoComponent = logo.Component;
                 return (
                   <div
                     key={`set2-${index}`}
-                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-[#1d326d]"
-                  >
+                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
                     <LogoComponent />
                     <span
                       className="text-xs mt-2 font-medium"
-                      style={{ fontFamily: "var(--font-figtree), Figtree" }}
-                    >
+                      style={{ fontFamily: "var(--font-figtree), Figtree" }}>
                       {logo.name}
                     </span>
                   </div>
@@ -137,20 +131,17 @@ export const IntegrationBentoGrid = () => {
             {/* Third Set (Another duplicate for extra smoothness) */}
             <div
               className="flex gap-16 shrink-0 animate-marquee group-hover:pause"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               {logos.map((logo, index) => {
                 const LogoComponent = logo.Component;
                 return (
                   <div
                     key={`set3-${index}`}
-                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-[#1d326d]"
-                  >
+                    className="flex flex-col items-center justify-center w-32 h-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 hover:scale-110 text-slate-400 hover:text-primary">
                     <LogoComponent />
                     <span
                       className="text-xs mt-2 font-medium"
-                      style={{ fontFamily: "var(--font-figtree), Figtree" }}
-                    >
+                      style={{ fontFamily: "var(--font-figtree), Figtree" }}>
                       {logo.name}
                     </span>
                   </div>
@@ -166,8 +157,7 @@ export const IntegrationBentoGrid = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-base font-medium bg-transparent text-[#1d326d] border-[#1d326d] hover:bg-[#1d326d] hover:text-white"
-            >
+              className="text-base font-medium bg-transparent text-primary border-primary hover:bg-primary hover:text-white">
               View all integrations
             </Button>
           </Link>

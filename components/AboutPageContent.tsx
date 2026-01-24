@@ -88,18 +88,15 @@ export function AboutPageContent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
             <h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1d326d] mb-8 leading-tight"
-              style={{ fontFamily: "Inter" }}
-            >
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight"
+              style={{ fontFamily: "Inter" }}>
               We are building the Operating System for Modern Healthcare.
             </h1>
             <p
               className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-              style={{ fontFamily: "Inter" }}
-            >
+              style={{ fontFamily: "Inter" }}>
               Trusted by over 500 medical practices across Australia to deliver
               secure, compliant, and intelligent clinic management solutions.
             </p>
@@ -116,21 +113,18 @@ export function AboutPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
-            >
-              <div className="w-14 h-14 bg-[#1d326d]/10 rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-7 h-7 text-[#1d326d]" />
+              className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-7 h-7 text-primary" />
               </div>
               <h2
-                className="text-2xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-2xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Our Mission
               </h2>
               <p
                 className="text-slate-600 mb-6"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 To empower healthcare providers with intuitive, intelligent
                 software that eliminates administrative burden and lets them
                 focus on what matters most — patient care.
@@ -162,21 +156,18 @@ export function AboutPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
-            >
+              className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="w-14 h-14 bg-[#fcc41d]/10 rounded-xl flex items-center justify-center mb-6">
                 <Award className="w-7 h-7 text-[#fcc41d]" />
               </div>
               <h2
-                className="text-2xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-2xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Our Vision
               </h2>
               <p
                 className="text-slate-600 mb-6"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 A future where every healthcare practice, regardless of size,
                 has access to world-class technology that enhances the care
                 experience for both providers and patients.
@@ -214,24 +205,20 @@ export function AboutPageContent() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+              transition={{ duration: 0.5 }}>
               <span
-                className="inline-block px-4 py-2 bg-[#1d326d]/10 text-[#1d326d] rounded-full text-sm font-semibold mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4"
+                style={{ fontFamily: "Inter" }}>
                 How We Help
               </span>
               <h2
-                className="text-3xl sm:text-4xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-3xl sm:text-4xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Streamlining Clinic Operations
               </h2>
               <p
                 className="text-lg text-slate-600 max-w-2xl mx-auto"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 CareTracker provides comprehensive solutions that address the
                 real challenges healthcare practices face every day.
               </p>
@@ -244,15 +231,13 @@ export function AboutPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[#1d326d]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users2 className="w-8 h-8 text-[#1d326d]" />
+              className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Users2 className="w-8 h-8 text-primary" />
               </div>
               <h3
-                className="text-xl font-bold text-[#1d326d] mb-3"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-xl font-bold text-primary mb-3"
+                style={{ fontFamily: "Inter" }}>
                 Automate the Routine
               </h3>
               <p className="text-slate-600" style={{ fontFamily: "Inter" }}>
@@ -266,15 +251,13 @@ export function AboutPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-center"
-            >
+              className="text-center">
               <div className="w-16 h-16 bg-[#fcc41d]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Award className="w-8 h-8 text-[#fcc41d]" />
               </div>
               <h3
-                className="text-xl font-bold text-[#1d326d] mb-3"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-xl font-bold text-primary mb-3"
+                style={{ fontFamily: "Inter" }}>
                 Unified Platform
               </h3>
               <p className="text-slate-600" style={{ fontFamily: "Inter" }}>
@@ -288,15 +271,13 @@ export function AboutPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[#1d326d]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Lock className="w-8 h-8 text-[#1d326d]" />
+              className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Lock className="w-8 h-8 text-primary" />
               </div>
               <h3
-                className="text-xl font-bold text-[#1d326d] mb-3"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-xl font-bold text-primary mb-3"
+                style={{ fontFamily: "Inter" }}>
                 Built-in Compliance
               </h3>
               <p className="text-slate-600" style={{ fontFamily: "Inter" }}>
@@ -315,18 +296,15 @@ export function AboutPageContent() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+              transition={{ duration: 0.6 }}>
               <h2
-                className="text-4xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-4xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Our Journey
               </h2>
               <p
                 className="text-lg text-slate-600"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 Building trust through consistent excellence and innovation
               </p>
             </motion.div>
@@ -344,28 +322,24 @@ export function AboutPageContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative pl-20"
-                >
+                  className="relative pl-20">
                   {/* Gold dot */}
                   <div className="absolute left-6 top-1 w-5 h-5 bg-[#fcc41d] rounded-full border-4 border-slate-50 shadow-md" />
 
                   <div className="bg-slate-50 rounded-xl p-6 shadow-sm">
                     <div
                       className="text-2xl font-bold text-[#fcc41d] mb-2"
-                      style={{ fontFamily: "Inter" }}
-                    >
+                      style={{ fontFamily: "Inter" }}>
                       {milestone.year}
                     </div>
                     <h3
-                      className="text-xl font-bold text-[#1d326d] mb-2"
-                      style={{ fontFamily: "Inter" }}
-                    >
+                      className="text-xl font-bold text-primary mb-2"
+                      style={{ fontFamily: "Inter" }}>
                       {milestone.title}
                     </h3>
                     <p
                       className="text-slate-600"
-                      style={{ fontFamily: "Inter" }}
-                    >
+                      style={{ fontFamily: "Inter" }}>
                       {milestone.description}
                     </p>
                   </div>
@@ -383,18 +357,15 @@ export function AboutPageContent() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+              transition={{ duration: 0.6 }}>
               <h2
-                className="text-4xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-4xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Leadership Team
               </h2>
               <p
                 className="text-lg text-slate-600"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 Medical and technology experts dedicated to healthcare
                 excellence
               </p>
@@ -409,8 +380,7 @@ export function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-              >
+                className="group">
                 <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
                   {/* Square photo with B&W to color effect on hover */}
                   <div className="aspect-square relative bg-slate-100 overflow-hidden">
@@ -424,15 +394,13 @@ export function AboutPageContent() {
 
                   <div className="p-6 text-center">
                     <h3
-                      className="text-lg font-bold text-[#1d326d] mb-1"
-                      style={{ fontFamily: "Inter" }}
-                    >
+                      className="text-lg font-bold text-primary mb-1"
+                      style={{ fontFamily: "Inter" }}>
                       {member.name}
                     </h3>
                     <p
                       className="text-sm text-slate-600 font-medium"
-                      style={{ fontFamily: "Inter" }}
-                    >
+                      style={{ fontFamily: "Inter" }}>
                       {member.role}
                     </p>
                   </div>
@@ -450,18 +418,15 @@ export function AboutPageContent() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+              transition={{ duration: 0.6 }}>
               <h2
-                className="text-3xl font-bold text-[#1d326d] mb-4"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-3xl font-bold text-primary mb-4"
+                style={{ fontFamily: "Inter" }}>
                 Trusted & Certified
               </h2>
               <p
                 className="text-lg text-slate-600"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 Meeting the highest standards in healthcare security and
                 compliance
               </p>
@@ -476,15 +441,13 @@ export function AboutPageContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-col items-center text-center"
-              >
-                <div className="w-20 h-20 rounded-full bg-[#1d326d]/5 flex items-center justify-center mb-4">
-                  <badge.icon className="w-10 h-10 text-[#1d326d] opacity-50" />
+                className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center mb-4">
+                  <badge.icon className="w-10 h-10 text-primary opacity-50" />
                 </div>
                 <h3
-                  className="text-base font-bold text-[#1d326d] opacity-50"
-                  style={{ fontFamily: "Inter" }}
-                >
+                  className="text-base font-bold text-primary opacity-50"
+                  style={{ fontFamily: "Inter" }}>
                   {badge.name}
                 </h3>
               </motion.div>
@@ -496,28 +459,24 @@ export function AboutPageContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 text-center"
-          >
+            className="mt-16 text-center">
             <div className="bg-slate-50 rounded-2xl p-8 max-w-3xl mx-auto">
-              <Users2 className="w-12 h-12 text-[#1d326d] mx-auto mb-4" />
+              <Users2 className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3
-                className="text-2xl font-bold text-[#1d326d] mb-3"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="text-2xl font-bold text-primary mb-3"
+                style={{ fontFamily: "Inter" }}>
                 Partner With Us
               </h3>
               <p
                 className="text-slate-600 mb-6"
-                style={{ fontFamily: "Inter" }}
-              >
+                style={{ fontFamily: "Inter" }}>
                 Join over 500 medical practices that trust CareTracker to power
                 their operations.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#1d326d] text-white font-semibold rounded-full hover:bg-[#1d326d]/90 transition-colors shadow-md"
-                style={{ fontFamily: "Inter" }}
-              >
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-colors shadow-md"
+                style={{ fontFamily: "Inter" }}>
                 Schedule a Demo
               </Link>
             </div>

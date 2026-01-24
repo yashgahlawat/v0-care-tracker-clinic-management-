@@ -42,8 +42,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
   return (
     <section
       className="w-full px-4 sm:px-6 lg:px-8 py-24 bg-slate-50"
-      id="home"
-    >
+      id="home">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-4">
           {/* Left Column - Content */}
@@ -58,13 +57,11 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               duration: 0.8,
               ease: [0.645, 0.045, 0.355, 1],
             }}
-            className="bg-[#e9e9e9] rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] p-6 sm:p-10 lg:p-12 xl:p-16 flex flex-col justify-end lg:aspect-square overflow-hidden order-1"
-          >
+            className="bg-[#e9e9e9] rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] p-6 sm:p-10 lg:p-12 xl:p-16 flex flex-col justify-end lg:aspect-square overflow-hidden order-1">
             <a
               href={primaryButtonHref}
               onClick={e => e.preventDefault()}
-              className="flex flex-col gap-1 text-[#9a9a9a]"
-            >
+              className="flex flex-col gap-1 text-[#9a9a9a]">
               <motion.span
                 initial={{
                   transform: "translateY(20px)",
@@ -83,21 +80,19 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 style={{
                   fontFamily:
                     "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
-                }}
-              >
+                }}>
                 {dailyVolumeLabel}
                 <ArrowUpRight className="w-[0.71em] h-[0.71em]" />
               </motion.span>
               <span
-                className="text-[32px] leading-[160px] tracking-tight bg-gradient-to-r from-[#202020] via-[#1d326d] via-[#fcc41d] to-[#fcc41d] bg-clip-text text-transparent"
+                className="text-[32px] leading-[160px] tracking-tight bg-gradient-to-r from-[#202020] via-primary via-[#fcc41d] to-[#fcc41d] bg-clip-text text-transparent"
                 style={{
                   fontFeatureSettings: '"clig" 0, "liga" 0',
                   height: "98px",
                   marginBottom: "0px",
                   paddingTop: "",
                   display: "none",
-                }}
-              >
+                }}>
                 {dailyVolume}
               </span>
             </a>
@@ -107,8 +102,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               style={{
                 fontWeight: "500",
                 fontFamily: "var(--font-figtree), Figtree",
-              }}
-            >
+              }}>
               {headline}
             </h1>
 
@@ -116,8 +110,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               className="text-base sm:text-lg leading-6 sm:leading-7 text-[#404040] max-w-[520px] mb-4 sm:mb-6"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
-              }}
-            >
+              }}>
               {subheadline}
             </p>
 
@@ -126,8 +119,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 className="text-base leading-5"
                 style={{
                   display: "none",
-                }}
-              >
+                }}>
                 {description}
               </p>
             </div>
@@ -137,8 +129,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={primaryButtonHref}
                   onClick={e => e.preventDefault()}
-                  className="block cursor-pointer text-white bg-[#1d326d] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-[#162654]"
-                >
+                  className="block cursor-pointer text-white bg-primary rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl hover:bg-[#162654]">
                   {primaryButtonText}
                 </a>
               </li>
@@ -146,8 +137,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 <a
                   href={secondaryButtonHref}
                   onClick={e => e.preventDefault()}
-                  className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
-                >
+                  className="block cursor-pointer text-[#202020] border border-[#202020] rounded-full px-4 sm:px-[18px] py-3 sm:py-[15px] text-sm sm:text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl">
                   {secondaryButtonText}
                 </a>
               </li>
@@ -167,27 +157,25 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
               ease: [0.645, 0.045, 0.355, 1],
               delay: 0.2,
             }}
-            className="bg-gradient-to-br from-[#1d326d] to-[#0f1a38] rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] flex flex-col justify-center items-center aspect-square overflow-hidden p-4 sm:p-6 lg:p-8 order-2"
-          >
+            className="bg-gradient-to-br from-primary to-[#0f1a38] rounded-[24px] sm:rounded-[32px] lg:rounded-[40px] flex flex-col justify-center items-center aspect-square overflow-hidden p-4 sm:p-6 lg:p-8 order-2">
             <div className="w-full max-w-md space-y-3 sm:space-y-4">
               {/* Dashboard Preview Card */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="bg-white/95 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl"
-              >
+                className="bg-white/95 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl">
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <h3 className="font-semibold text-[#202020] text-sm sm:text-base">
                     Today&apos;s Schedule
                   </h3>
-                  <span className="text-xs sm:text-sm text-[#1d326d] font-medium">
+                  <span className="text-xs sm:text-sm text-primary font-medium">
                     12 appointments
                   </span>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-[#1d326d]/5 rounded-lg">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#1d326d] flex-shrink-0" />
+                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-primary/5 rounded-lg">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
                     <div className="min-w-0">
                       <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">
                         9:00 AM - Sarah Johnson
@@ -197,8 +185,8 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-[#1d326d]/5 rounded-lg">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#1d326d] flex-shrink-0" />
+                  <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-primary/5 rounded-lg">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
                     <div className="min-w-0">
                       <p className="text-xs sm:text-sm font-medium text-[#202020] truncate">
                         10:30 AM - Michael Chen
@@ -217,9 +205,8 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
-                >
-                  <Users className="w-4 h-4 sm:w-6 sm:h-6 text-[#1d326d] mx-auto mb-1 sm:mb-2" />
+                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg">
+                  <Users className="w-4 h-4 sm:w-6 sm:h-6 text-primary mx-auto mb-1 sm:mb-2" />
                   <p className="text-lg sm:text-2xl font-bold text-[#202020]">
                     847
                   </p>
@@ -229,9 +216,8 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
-                >
-                  <ClipboardList className="w-4 h-4 sm:w-6 sm:h-6 text-[#1d326d] mx-auto mb-1 sm:mb-2" />
+                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg">
+                  <ClipboardList className="w-4 h-4 sm:w-6 sm:h-6 text-primary mx-auto mb-1 sm:mb-2" />
                   <p className="text-lg sm:text-2xl font-bold text-[#202020]">
                     156
                   </p>
@@ -243,8 +229,7 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.7 }}
-                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg"
-                >
+                  className="bg-white/95 rounded-lg sm:rounded-xl p-2 sm:p-4 text-center shadow-lg">
                   <Shield className="w-4 h-4 sm:w-6 sm:h-6 text-[#fcc41d] mx-auto mb-1 sm:mb-2" />
                   <p className="text-lg sm:text-2xl font-bold text-[#202020]">
                     HIPAA

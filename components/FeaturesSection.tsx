@@ -122,25 +122,22 @@ const features: Feature[] = [
 
 export const FeaturesSection = () => {
   return (
-    <section className="w-full pt-16 pb-12 bg-[#1d326d]/5" id="features">
+    <section className="w-full pt-16 pb-12 bg-primary/5" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-10 lg:mb-16"
-        >
+          className="text-center mb-10 lg:mb-16">
           <h2
-            className="text-2xl sm:text-3xl lg:text-[40px] leading-tight font-normal text-[#1d326d] tracking-tight mb-3 lg:mb-4"
-            style={{ fontFamily: "var(--font-inter), Inter" }}
-          >
+            className="text-2xl sm:text-3xl lg:text-[40px] leading-tight font-normal text-primary tracking-tight mb-3 lg:mb-4"
+            style={{ fontFamily: "var(--font-inter), Inter" }}>
             Everything your clinic needs
           </h2>
           <p
             className="text-base lg:text-lg leading-6 lg:leading-7 text-slate-600 max-w-2xl mx-auto px-4 sm:px-0"
-            style={{ fontFamily: "var(--font-roboto), Roboto" }}
-          >
+            style={{ fontFamily: "var(--font-roboto), Roboto" }}>
             A comprehensive platform built for Australian healthcare
             practices—from solo practitioners to multi-clinic networks.
           </p>
@@ -158,21 +155,18 @@ export const FeaturesSection = () => {
                 delay: index * 0.05,
                 ease: "easeOut",
               }}
-              className="bg-white rounded-xl lg:rounded-2xl p-5 lg:p-6 shadow-sm border border-[#1d326d]/20 hover:shadow-md hover:border-[#1d326d] transition-all duration-200"
-            >
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#fcc41d]/10 rounded-lg lg:rounded-xl flex items-center justify-center text-[#1d326d] mb-3 lg:mb-4">
+              className="bg-white rounded-xl lg:rounded-2xl p-5 lg:p-6 shadow-sm border border-primary/20 hover:shadow-md hover:border-primary transition-all duration-200">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#fcc41d]/10 rounded-lg lg:rounded-xl flex items-center justify-center text-primary mb-3 lg:mb-4">
                 {feature.icon}
               </div>
               <h3
-                className="text-base lg:text-lg font-medium text-[#1d326d] mb-2"
-                style={{ fontFamily: "var(--font-inter), Inter" }}
-              >
+                className="text-base lg:text-lg font-medium text-primary mb-2"
+                style={{ fontFamily: "var(--font-inter), Inter" }}>
                 {feature.title}
               </h3>
               <p
                 className="text-sm leading-5 lg:leading-6 text-slate-600"
-                style={{ fontFamily: "var(--font-inter), Inter" }}
-              >
+                style={{ fontFamily: "var(--font-inter), Inter" }}>
                 {feature.description}
               </p>
             </motion.div>
@@ -184,13 +178,11 @@ export const FeaturesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center mt-8 lg:mt-12 mb-0"
-        >
+          className="flex justify-center mt-8 lg:mt-12 mb-0">
           <Link
             href="/features"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm lg:text-base font-medium text-[#1d326d] bg-transparent border-2 border-[#1d326d] rounded-lg hover:bg-[#fcc41d] hover:text-[#1d326d] hover:border-[#fcc41d] transition-all duration-200"
-            style={{ fontFamily: "var(--font-inter), Inter" }}
-          >
+            className="inline-flex items-center justify-center px-6 py-3 text-sm lg:text-base font-medium text-primary bg-transparent border-2 border-primary rounded-lg hover:bg-[#fcc41d] hover:text-primary hover:border-[#fcc41d] transition-all duration-200"
+            style={{ fontFamily: "var(--font-inter), Inter" }}>
             View all features
           </Link>
         </motion.div>

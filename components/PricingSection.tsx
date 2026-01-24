@@ -102,8 +102,7 @@ export function PricingSection() {
                 !isYearly
                   ? "bg-background text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground",
-              )}
-            >
+              )}>
               Monthly
             </button>
             <button
@@ -114,8 +113,7 @@ export function PricingSection() {
                 isYearly
                   ? "bg-background text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground",
-              )}
-            >
+              )}>
               Yearly
               <span className="ml-2 text-sm text-[#fcc41d]">Save 17%</span>
             </button>
@@ -132,12 +130,11 @@ export function PricingSection() {
               className={cn(
                 "relative p-8 rounded-2xl text-left transition-all border-2",
                 selectedPlan === plan.level
-                  ? "border-[#1d326d] bg-[#1d326d]/5"
-                  : "border-border hover:border-[#1d326d]/50",
-              )}
-            >
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:border-primary/50",
+              )}>
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1d326d] text-white px-4 py-1 rounded-full text-sm font-figtree">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-figtree">
                   Most Popular
                 </span>
               )}
@@ -158,10 +155,9 @@ export function PricingSection() {
                 className={cn(
                   "w-full py-3 px-6 rounded-full font-figtree text-lg transition-all text-center",
                   selectedPlan === plan.level
-                    ? "bg-[#1d326d] text-white"
+                    ? "bg-primary text-white"
                     : "bg-secondary text-foreground",
-                )}
-              >
+                )}>
                 {selectedPlan === plan.level ? "Selected" : "Select Plan"}
               </div>
             </button>
@@ -181,8 +177,7 @@ export function PricingSection() {
                   {plans.map(plan => (
                     <div
                       key={plan.level}
-                      className="w-24 text-center font-figtree text-lg font-medium"
-                    >
+                      className="w-24 text-center font-figtree text-lg font-medium">
                       {plan.name}
                     </div>
                   ))}
@@ -196,9 +191,8 @@ export function PricingSection() {
                   className={cn(
                     "flex items-center p-6 transition-colors",
                     index % 2 === 0 ? "bg-background" : "bg-secondary/30",
-                    feature.included === selectedPlan && "bg-[#1d326d]/5",
-                  )}
-                >
+                    feature.included === selectedPlan && "bg-primary/5",
+                  )}>
                   <div className="flex-1">
                     <span className="font-figtree text-lg">{feature.name}</span>
                   </div>
@@ -206,10 +200,9 @@ export function PricingSection() {
                     {plans.map(plan => (
                       <div
                         key={plan.level}
-                        className="w-24 flex justify-center"
-                      >
+                        className="w-24 flex justify-center">
                         {shouldShowCheck(feature.included, plan.level) ? (
-                          <div className="w-6 h-6 rounded-full bg-[#1d326d] flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                             <CheckIcon className="w-4 h-4 text-white" />
                           </div>
                         ) : (
@@ -226,7 +219,7 @@ export function PricingSection() {
 
         {/* CTA Button */}
         <div className="mt-12 text-center">
-          <button className="bg-[#1d326d] text-white px-[18px] py-[15px] rounded-full font-figtree text-lg hover:rounded-2xl transition-all">
+          <button className="bg-primary text-white px-[18px] py-[15px] rounded-full font-figtree text-lg hover:rounded-2xl transition-all">
             Start 14-day free trial with{" "}
             {plans.find(p => p.level === selectedPlan)?.name}
           </button>

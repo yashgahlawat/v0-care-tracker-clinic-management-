@@ -32,7 +32,7 @@ export function LoginPageContent() {
   return (
     <div className="min-h-screen bg-background flex">
       {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#1d326d] relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/abstract-medical-pattern-subtle.jpg')] opacity-10" />
         <div className="relative z-10 flex flex-col justify-between p-12 w-full">
           <div>
@@ -43,8 +43,7 @@ export function LoginPageContent() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+              transition={{ duration: 0.6, delay: 0.2 }}>
               <h1 className="text-4xl xl:text-5xl font-bold text-white mb-6 leading-tight">
                 Welcome back to your clinic dashboard
               </h1>
@@ -58,8 +57,7 @@ export function LoginPageContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-4"
-            >
+              className="space-y-4">
               {[
                 "Secure, HIPAA-compliant access",
                 "Real-time practice insights",
@@ -67,8 +65,7 @@ export function LoginPageContent() {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 text-white/90"
-                >
+                  className="flex items-center gap-3 text-white/90">
                   <CheckCircle2 className="w-5 h-5 text-[#fcc41d]" />
                   <span>{feature}</span>
                 </div>
@@ -89,8 +86,7 @@ export function LoginPageContent() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full max-w-md"
-        >
+          className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden mb-8">
             <CareTrackerLogo size="md" href="/" />
@@ -109,8 +105,7 @@ export function LoginPageContent() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
+                className="block text-sm font-medium text-foreground mb-2">
                 Email address
               </label>
               <div className="relative">
@@ -131,14 +126,12 @@ export function LoginPageContent() {
               <div className="flex items-center justify-between mb-2">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-foreground"
-                >
+                  className="block text-sm font-medium text-foreground">
                   Password
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-sm text-[#1d326d] hover:text-[#1d326d]/80 transition-colors"
-                >
+                  className="text-sm text-primary hover:text-primary/80 transition-colors">
                   Forgot password?
                 </Link>
               </div>
@@ -157,8 +150,7 @@ export function LoginPageContent() {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
+                  aria-label={showPassword ? "Hide password" : "Show password"}>
                   {showPassword ? (
                     <EyeOff className="w-5 h-5" />
                   ) : (
@@ -172,12 +164,11 @@ export function LoginPageContent() {
               <input
                 id="remember"
                 type="checkbox"
-                className="w-4 h-4 rounded border-border text-[#1d326d] focus:ring-[#1d326d]"
+                className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
               />
               <label
                 htmlFor="remember"
-                className="text-sm text-muted-foreground"
-              >
+                className="text-sm text-muted-foreground">
                 Remember me for 30 days
               </label>
             </div>
@@ -185,8 +176,7 @@ export function LoginPageContent() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full btn-primary rounded-xl disabled:opacity-70"
-            >
+              className="w-full btn-primary rounded-xl disabled:opacity-70">
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
@@ -213,8 +203,7 @@ export function LoginPageContent() {
             <div className="mt-6 grid grid-cols-2 gap-4">
               <button
                 type="button"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors"
-              >
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors">
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -237,13 +226,11 @@ export function LoginPageContent() {
               </button>
               <button
                 type="button"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors"
-              >
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-xl text-foreground hover:bg-[#fafafa] transition-colors">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
                 </svg>
                 Apple
@@ -255,8 +242,7 @@ export function LoginPageContent() {
             Don&apos;t have an account?{" "}
             <Link
               href="/signup"
-              className="text-[#1d326d] font-medium hover:text-[#1d326d]/80 transition-colors"
-            >
+              className="text-primary font-medium hover:text-primary/80 transition-colors">
               Start free trial
             </Link>
           </p>

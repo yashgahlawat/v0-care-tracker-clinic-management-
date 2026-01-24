@@ -88,18 +88,15 @@ export const CaseStudiesCarousel = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-10 lg:mb-16"
-        >
+          className="text-center mb-10 lg:mb-16">
           <h2
             className="text-2xl sm:text-3xl lg:text-[40px] leading-tight font-normal text-[#202020] tracking-tight mb-3 lg:mb-4"
-            style={{ fontFamily: "var(--font-inter), Inter" }}
-          >
+            style={{ fontFamily: "var(--font-inter), Inter" }}>
             Trusted by healthcare practices
           </h2>
           <p
             className="text-base lg:text-lg leading-6 lg:leading-7 text-[#666666] max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-roboto), Roboto" }}
-          >
+            style={{ fontFamily: "var(--font-roboto), Roboto" }}>
             See how clinics across specialties are transforming their operations
             with CareTracker.
           </p>
@@ -113,8 +110,7 @@ export const CaseStudiesCarousel = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.4 }}
-              className="bg-white rounded-2xl lg:rounded-3xl p-5 sm:p-8 lg:p-12 shadow-sm border border-slate-200"
-            >
+              className="bg-white rounded-2xl lg:rounded-3xl p-5 sm:p-8 lg:p-12 shadow-sm border border-slate-200">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
                 {/* Left Column - Quote */}
                 <div className="flex flex-col justify-between">
@@ -124,8 +120,7 @@ export const CaseStudiesCarousel = () => {
                         className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl flex items-center justify-center"
                         style={{
                           backgroundColor: `${currentStudy.accentColor}15`,
-                        }}
-                      >
+                        }}>
                         <Quote
                           className="w-4 h-4 lg:w-5 lg:h-5"
                           style={{ color: currentStudy.accentColor }}
@@ -134,14 +129,12 @@ export const CaseStudiesCarousel = () => {
                       <div>
                         <p
                           className="font-medium text-[#202020] text-sm lg:text-base"
-                          style={{ fontFamily: "var(--font-inter), Inter" }}
-                        >
+                          style={{ fontFamily: "var(--font-inter), Inter" }}>
                           {currentStudy.clinicName}
                         </p>
                         <p
                           className="text-xs lg:text-sm text-[#666]"
-                          style={{ fontFamily: "var(--font-roboto), Roboto" }}
-                        >
+                          style={{ fontFamily: "var(--font-roboto), Roboto" }}>
                           {currentStudy.specialty}
                         </p>
                       </div>
@@ -149,22 +142,19 @@ export const CaseStudiesCarousel = () => {
 
                     <h3
                       className="text-xl sm:text-2xl lg:text-3xl font-normal text-[#202020] mb-4 lg:mb-6 leading-snug"
-                      style={{ fontFamily: "var(--font-inter), Inter" }}
-                    >
+                      style={{ fontFamily: "var(--font-inter), Inter" }}>
                       {currentStudy.title}
                     </h3>
 
                     <blockquote
                       className="text-base lg:text-lg text-[#4b5563] mb-4 lg:mb-6 leading-relaxed"
-                      style={{ fontFamily: "var(--font-roboto), Roboto" }}
-                    >
+                      style={{ fontFamily: "var(--font-roboto), Roboto" }}>
                       &ldquo;{currentStudy.quote}&rdquo;
                     </blockquote>
 
                     <p
                       className="text-xs lg:text-sm font-medium text-[#666]"
-                      style={{ fontFamily: "var(--font-roboto), Roboto" }}
-                    >
+                      style={{ fontFamily: "var(--font-roboto), Roboto" }}>
                       {currentStudy.attribution}
                     </p>
                   </div>
@@ -176,21 +166,18 @@ export const CaseStudiesCarousel = () => {
                     {currentStudy.stats.map((stat, idx) => (
                       <div
                         key={idx}
-                        className="bg-slate-50 rounded-xl lg:rounded-2xl p-4 lg:p-6 border border-slate-200"
-                      >
+                        className="bg-slate-50 rounded-xl lg:rounded-2xl p-4 lg:p-6 border border-slate-200">
                         <p
                           className="text-xl sm:text-2xl lg:text-4xl font-medium mb-1"
                           style={{
                             color: currentStudy.accentColor,
                             fontFamily: "var(--font-inter), Inter",
-                          }}
-                        >
+                          }}>
                           {stat.value}
                         </p>
                         <p
                           className="text-xs lg:text-sm text-[#666]"
-                          style={{ fontFamily: "var(--font-roboto), Roboto" }}
-                        >
+                          style={{ fontFamily: "var(--font-roboto), Roboto" }}>
                           {stat.label}
                         </p>
                       </div>
@@ -205,9 +192,8 @@ export const CaseStudiesCarousel = () => {
           <div className="flex items-center justify-center gap-4 mt-6 lg:mt-8">
             <button
               onClick={prevSlide}
-              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-[#1d326d] hover:text-[#1d326d] transition-colors"
-              aria-label="Previous case study"
-            >
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              aria-label="Previous case study">
               <ChevronLeft className="w-4 h-4 lg:w-5 lg:h-5" />
             </button>
             <div className="flex gap-2">
@@ -216,7 +202,7 @@ export const CaseStudiesCarousel = () => {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    idx === currentIndex ? "bg-[#1d326d]" : "bg-[#d1d5db]"
+                    idx === currentIndex ? "bg-primary" : "bg-[#d1d5db]"
                   }`}
                   aria-label={`Go to case study ${idx + 1}`}
                 />
@@ -224,9 +210,8 @@ export const CaseStudiesCarousel = () => {
             </div>
             <button
               onClick={nextSlide}
-              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-[#1d326d] hover:text-[#1d326d] transition-colors"
-              aria-label="Next case study"
-            >
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+              aria-label="Next case study">
               <ChevronRight className="w-4 h-4 lg:w-5 lg:h-5" />
             </button>
           </div>

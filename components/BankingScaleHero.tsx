@@ -82,12 +82,11 @@ export const BankingScaleHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-5">
           <div className="relative z-10">
             <div
-              className="relative h-6 inline-flex items-center font-mono uppercase text-xs text-[#1d326d] mb-8 lg:mb-12 px-2"
+              className="relative h-6 inline-flex items-center font-mono uppercase text-xs text-primary mb-8 lg:mb-12 px-2"
               style={{
                 fontFamily:
                   "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
-              }}
-            >
+              }}>
               <div className="flex items-center gap-0.5 overflow-hidden">
                 <motion.span
                   initial={{
@@ -100,8 +99,7 @@ export const BankingScaleHero = () => {
                     duration: 0.8,
                     ease: "easeOut",
                   }}
-                  className="block whitespace-nowrap overflow-hidden text-[#1d326d] relative z-10"
-                >
+                  className="block whitespace-nowrap overflow-hidden text-primary relative z-10">
                   Trusted by Healthcare Leaders
                 </motion.span>
                 <motion.span
@@ -126,15 +124,13 @@ export const BankingScaleHero = () => {
               style={{
                 fontFamily: "var(--font-inter), Inter",
                 fontWeight: "400",
-              }}
-            >
+              }}>
               Turn Cancellations into{" "}
               <span
-                className="bg-gradient-to-r from-[#1d326d] to-[#3b82f6] bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-primary to-[#3b82f6] bg-clip-text text-transparent"
                 style={{
                   fontWeight: "400",
-                }}
-              >
+                }}>
                 Revenue on Autopilot
               </span>
             </h2>
@@ -143,8 +139,7 @@ export const BankingScaleHero = () => {
               className="text-base lg:text-lg leading-6 text-[#111A4A] opacity-60 mt-0 mb-4 lg:mb-6"
               style={{
                 fontFamily: "var(--font-roboto), Roboto",
-              }}
-            >
+              }}>
               The only clinic OS that automatically fills empty slots via
               WhatsApp, reduces admin time by 40%, and ensures you get paid
               faster.
@@ -193,8 +188,7 @@ export const BankingScaleHero = () => {
                             ? "linear-gradient(rgb(252, 196, 29) 0%, rgb(252, 196, 29) 10%, rgba(29, 50, 109, 0.1) 40%, rgba(29, 50, 109, 0) 75%)"
                             : "linear-gradient(to top, rgb(252, 196, 29) 0%, rgb(252, 196, 29) 10%, rgba(29, 50, 109, 0.1) 40%, rgba(29, 50, 109, 0) 75%)",
                         backgroundColor: "rgba(29, 50, 109, 0.01)",
-                      }}
-                    >
+                      }}>
                       <motion.div
                         initial={{
                           opacity: 0,
@@ -210,7 +204,7 @@ export const BankingScaleHero = () => {
                           duration: 0.3,
                           delay: point.delay + 1.7,
                         }}
-                        className="absolute -left-[1px] w-2 h-2 bg-[#1d326d] rounded-full"
+                        className="absolute -left-[1px] w-2 h-2 bg-primary rounded-full"
                         style={{
                           top:
                             point.direction === "down"
@@ -250,9 +244,8 @@ export const BankingScaleHero = () => {
                         delay: stat.delay,
                         ease: [0.1, 0, 0.1, 1],
                       }}
-                      className="flex flex-col gap-2"
-                    >
-                      <span className="text-xl sm:text-2xl font-medium leading-tight tracking-tight text-[#1d326d]">
+                      className="flex flex-col gap-2">
+                      <span className="text-xl sm:text-2xl font-medium leading-tight tracking-tight text-primary">
                         {stat.value}
                       </span>
                       <p className="text-xs leading-tight text-[#7C7F88] m-0 whitespace-pre-line">

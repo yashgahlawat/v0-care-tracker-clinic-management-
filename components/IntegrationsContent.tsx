@@ -108,24 +108,41 @@ export function IntegrationsContent() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6"
-          >
-            Connect CareTracker with your favorite tools
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto"
-          >
-            Streamline your clinic workflow with our 50+ pre-built integrations.
-          </motion.p>
+            transition={{ duration: 0.6 }}>
+            <div
+              className="relative h-6 inline-flex items-center font-mono uppercase text-xs text-primary mb-8 px-2"
+              style={{
+                fontFamily:
+                  "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
+              }}>
+              <span className="block whitespace-nowrap overflow-hidden text-primary relative z-10">
+                Integrations
+              </span>
+            </div>
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-normal leading-tight tracking-tight text-[#111A4A] mb-6"
+              style={{
+                fontFamily: "var(--font-inter), Inter",
+              }}>
+              Connect CareTracker with your{" "}
+              <span className="bg-gradient-to-r from-primary to-[#3b82f6] bg-clip-text text-transparent font-normal">
+                favorite tools
+              </span>
+            </h1>
+            <p
+              className="text-lg sm:text-xl text-[#111A4A] opacity-60 max-w-2xl mx-auto leading-relaxed"
+              style={{
+                fontFamily: "var(--font-roboto), Roboto",
+              }}>
+              Streamline your clinic workflow with our 50+ pre-built
+              integrations.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -137,12 +154,11 @@ export function IntegrationsContent() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-200 ${
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                   activeCategory === category
-                    ? "bg-[#1d326d] text-white shadow-md"
-                    : "bg-white text-foreground hover:bg-slate-100 border border-slate-200"
-                }`}
-              >
+                    ? "bg-primary text-white shadow-sm"
+                    : "bg-white text-[#111A4A] hover:bg-slate-50 shadow-[0_1px_1px_0_rgba(255,255,255,0),0_0_0_1px_rgba(87,90,100,0.12)]"
+                }`}>
                 {category}
               </button>
             ))}
@@ -155,8 +171,7 @@ export function IntegrationsContent() {
         <div className="max-w-7xl mx-auto">
           <motion.div
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredIntegrations.map((integration, index) => (
               <motion.div
                 key={integration.id}
@@ -164,12 +179,11 @@ export function IntegrationsContent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-[#1d326d] hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-lg"
-              >
+                className="group relative bg-white rounded-xl p-6 shadow-[0_1px_1px_0_rgba(255,255,255,0),0_0_0_1px_rgba(87,90,100,0.12)] hover:shadow-[0_1px_2px_0_rgba(0,0,0,0.05),0_0_0_1px_rgba(87,90,100,0.18)] transition-all duration-200">
                 {/* Popular Badge */}
                 {integration.popular && (
                   <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#fcc41d] text-[#1d326d]">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#fcc41d]/10 text-primary border border-[#fcc41d]/20">
                       <BadgeCheck className="w-3 h-3" />
                       Popular
                     </span>
@@ -177,13 +191,17 @@ export function IntegrationsContent() {
                 )}
 
                 {/* Icon */}
-                <div className="mb-4 text-[#1d326d]">{integration.icon}</div>
+                <div className="mb-6 w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-200">
+                  <div className="text-primary child:w-6 child:h-6">
+                    {integration.icon}
+                  </div>
+                </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#1d326d] transition-colors">
+                <h3 className="text-lg font-medium text-[#111A4A] mb-2 group-hover:text-primary transition-colors">
                   {integration.name}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-[#111A4A] opacity-60 leading-relaxed mb-4">
                   {integration.description}
                 </p>
               </motion.div>

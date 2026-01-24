@@ -68,8 +68,7 @@ export const Footer = ({
       return (
         <Link
           href={link.href}
-          className="text-sm text-muted-foreground hover:text-[#1d326d] transition-colors duration-150"
-        >
+          className="text-sm text-muted-foreground hover:text-primary transition-colors duration-150">
           {link.label}
         </Link>
       );
@@ -78,8 +77,7 @@ export const Footer = ({
     return (
       <a
         href={link.href}
-        className="text-sm text-muted-foreground hover:text-[#1d326d] transition-colors duration-150"
-      >
+        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-150">
         {link.label}
       </a>
     );
@@ -95,8 +93,7 @@ export const Footer = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="lg:max-w-sm"
-          >
+            className="lg:max-w-sm">
             <div className="mb-4">
               <div className="mb-3">
                 <CareTrackerLogo size="md" href="/" />
@@ -110,18 +107,16 @@ export const Footer = ({
               {socialLinks.github && (
                 <a
                   href={socialLinks.github}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-muted-foreground hover:text-[#1d326d] hover:border-[#1d326d] transition-colors duration-150"
-                  aria-label="GitHub"
-                >
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-150"
+                  aria-label="GitHub">
                   <Github className="w-4 h-4" />
                 </a>
               )}
               {socialLinks.email && (
                 <a
                   href={`mailto:${socialLinks.email}`}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-muted-foreground hover:text-[#1d326d] hover:border-[#1d326d] transition-colors duration-150"
-                  aria-label="Email"
-                >
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-150"
+                  aria-label="Email">
                   <Mail className="w-4 h-4" />
                 </a>
               )}
@@ -140,8 +135,7 @@ export const Footer = ({
                   duration: 0.5,
                   delay: index * 0.1,
                   ease: "easeOut",
-                }}
-              >
+                }}>
                 <h4 className="text-sm font-medium text-foreground mb-3 lg:mb-4 uppercase tracking-wide">
                   {section.title}
                 </h4>
